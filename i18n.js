@@ -1,5 +1,6 @@
 /* Translate authored interface copy, never interpolated notes, addresses or map URLs. */
 window.TRIP_UI_EN = {
+  '地圖': 'Map', '東京地理與路線': 'Tokyo geography & routes', '查看今日地圖': 'See today’s map',
   'こちらのホテルまでお願いします。': 'こちらのホテルまでお願いします。', 'ありがとうございます。': 'ありがとうございます。',
   '秋日日本': 'Autumn in Japan', '秋日日本首頁': 'Autumn in Japan home', '跳至主要內容': 'Skip to content',
   '主要導覽': 'Main navigation', '手機主要導覽': 'Mobile navigation', '顯示語言': 'Display language',

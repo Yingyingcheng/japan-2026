@@ -1,5 +1,5 @@
-const CACHE = 'autumn-japan-2026-20261010-v53';
-const FILES = ['./', './index.html', './styles.css', './data.js', './app.js', './en.js', './i18n.js', './manifest-en.webmanifest', './manifest.webmanifest', './assets/fuji.jpg', './assets/tokyo.jpg', './assets/kyoto.jpg', './assets/icon.svg', './assets/icon-192.png', './assets/icon-512.png', './assets/narita-pickup.jpg'];
+const CACHE = 'autumn-japan-2026-20261011-tokyo-map-v1';
+const FILES = ['./tokyo-map.css', './tokyo-map.js', './tokyo-map-data.js', './assets/tokyo-map-style.json', './assets/vendor/maplibre/maplibre-gl.js', './assets/vendor/maplibre/maplibre-gl.css', './', './index.html', './styles.css', './data.js', './app.js', './en.js', './i18n.js', './manifest-en.webmanifest', './manifest.webmanifest', './assets/fuji.jpg', './assets/tokyo.jpg', './assets/kyoto.jpg', './assets/icon.svg', './assets/icon-192.png', './assets/icon-512.png', './assets/narita-pickup.jpg'];
 self.addEventListener('install', event => {
   event.waitUntil(caches.open(CACHE).then(cache => cache.addAll(FILES)).then(() => self.skipWaiting()));
 });

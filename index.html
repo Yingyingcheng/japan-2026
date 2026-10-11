@@ -18,9 +18,14 @@
   <link rel="apple-touch-icon" href="assets/icon-192.png">
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="assets/vendor/maplibre/maplibre-gl.css">
+  <link rel="stylesheet" href="tokyo-map.css">
   <script src="data.js" defer></script>
   <script src="en.js" defer></script>
   <script src="i18n.js" defer></script>
+  <script src="assets/vendor/maplibre/maplibre-gl.js" defer></script>
+  <script src="tokyo-map-data.js" defer></script>
+  <script src="tokyo-map.js" defer></script>
   <script src="app.js" defer></script>
 </head>
 <body>
@@ -32,6 +37,7 @@
     </a>
     <nav class="desktop-nav" aria-label="主要導覽" data-i18n-label="主要導覽">
       <a href="#plan" data-nav="plan" data-i18n="每日行程">每日行程</a>
+      <a href="#map" data-nav="map" data-i18n="地圖">地圖</a>
       <a href="#stays" data-nav="stays" data-i18n="住宿">住宿</a>
       <a href="#transit" data-nav="transit" data-i18n="航班與交通">航班與交通</a>
       <a href="#places" data-nav="places" data-i18n="口袋清單">口袋清單</a>
@@ -51,6 +57,7 @@
   <footer class="site-footer"><span data-i18n="慢慢走，也是一種旅行。">慢慢走，也是一種旅行。</span><span>2026.11.20 — 11.28 <span class="footer-separator">/</span> <button class="text-button" data-action="sources" data-i18n="資料與使用說明">資料與使用說明</button></span></footer>
   <nav class="mobile-nav" aria-label="手機主要導覽" data-i18n-label="手機主要導覽">
     <a href="#plan" data-nav="plan"><svg aria-hidden="true"><use href="#i-calendar"/></svg><span data-i18n="行程">行程</span></a>
+    <a href="#map" data-nav="map"><svg aria-hidden="true"><use href="#i-map"/></svg><span data-i18n="地圖">地圖</span></a>
     <a href="#stays" data-nav="stays"><svg aria-hidden="true"><use href="#i-bed"/></svg><span data-i18n="住宿">住宿</span></a>
     <a href="#transit" data-nav="transit"><svg aria-hidden="true"><use href="#i-train"/></svg><span data-i18n="交通">交通</span></a>
     <a href="#places" data-nav="places"><svg aria-hidden="true"><use href="#i-heart"/></svg><span data-i18n="口袋">口袋</span></a>

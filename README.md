@@ -15,10 +15,18 @@ The latest confirmed hotels and flight screenshots are authoritative. The older 
 
 ## Maintenance
 
-This is a dependency-free static site that can be served directly. `data.js` contains dates, places, transportation, and source links; `app.js` renders the interface; `styles.css` defines the responsive layout. Flat color-block illustrations (`fuji.jpg`, `tokyo.jpg`, `kyoto.jpg`) and app icons live in `assets/`.
+This is a static site that can be served directly, with no build step. `data.js` contains dates, places, transportation, and source links; `app.js` renders the interface; `styles.css` defines the responsive layout. Flat color-block illustrations (`fuji.jpg`, `tokyo.jpg`, `kyoto.jpg`) and app icons live in `assets/`.
 
 `en.js` supplies English trip copy over the shared IDs and confirmed details. `i18n.js` supplies interface copy. The `html` / `text` template helpers translate authored template fragments only, so interpolated personal notes, Japanese addresses and URLs are not translated. Keep both trip languages updated when editing content. The English install manifest is `manifest-en.webmanifest`.
 
 When updating content or assets, increment the cache version in `sw.js`. Its scope is limited to this trip directory. Keep booking references, traveler phone numbers, payment information, and personal notes out of the public source.
 
 The site lives below the existing GitHub Pages homepage and does not replace it.
+
+## Tokyo geography and day maps
+
+The Map tab (`#map`) shows Tokyo neighborhoods around our Aoyama base. Date views (`#map/2026-11-22`, for example) derive their numbered stops from the current trip data. Selecting a stop highlights only the preceding leg; the full set of connections is optional. Lines indicate visit order, not actual walking or transit routes. Google Maps links open the selected leg with the appropriate starting point.
+
+`tokyo-map-data.js` stores representative coordinates geocoded from public addresses by Japan's Geospatial Information Authority (GSI). They are not guaranteed entrance coordinates. `tokyo-map.js` and `tokyo-map.css` contain the bilingual map UI. `assets/tokyo-map-style.json` customizes OpenFreeMap's Positron basemap with quieter labels and parks. Vector map data comes from OpenFreeMap / OpenMapTiles / OpenStreetMap and needs internet; the stop list is cached for offline use. Map libraries and licenses are vendored in `assets/vendor/`: MapLibre GL JS 5.10.0.
+
+The optional university toggle and map selection do not modify itinerary data or saved personal notes. Add `?preview=map&lang=zh#map` to show a review badge for local previews. The travelers approved publishing this map on October 11, 2026.
