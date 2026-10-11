@@ -15,7 +15,7 @@ The latest confirmed hotels and flight screenshots are authoritative. The older 
 
 ## Maintenance
 
-This is a dependency-free static site that can be served directly. `data.js` contains dates, places, transportation, and source links; `app.js` renders the interface; `styles.css` defines the responsive layout. Original SVG illustrations and app icons live in `assets/`.
+This is a dependency-free static site that can be served directly. `data.js` contains dates, places, transportation, and source links; `app.js` renders the interface; `styles.css` defines the responsive layout. Flat color-block illustrations (`fuji.jpg`, `tokyo.jpg`, `kyoto.jpg`) and app icons live in `assets/`.
 
 `en.js` supplies English trip copy over the shared IDs and confirmed details. `i18n.js` supplies interface copy. The `html` / `text` template helpers translate authored template fragments only, so interpolated personal notes, Japanese addresses and URLs are not translated. Keep both trip languages updated when editing content. The English install manifest is `manifest-en.webmanifest`.
 
