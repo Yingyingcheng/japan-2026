@@ -19,7 +19,7 @@ This is a static site that can be served directly, with no build step. `data.js`
 
 `en.js` supplies English trip copy over the shared IDs and confirmed details. `i18n.js` supplies interface copy. The `html` / `text` template helpers translate authored template fragments only, so interpolated personal notes, Japanese addresses and URLs are not translated. Keep both trip languages updated when editing content. The English install manifest is `manifest-en.webmanifest`.
 
-When updating content or assets, increment the cache version in `sw.js`. Its scope is limited to this trip directory. Keep booking references, traveler phone numbers, payment information, and personal notes out of the public source.
+When updating content or assets, increment the cache version in `sw.js`. For changed script URLs that carry a version in `index.html`, update that version in both the HTML and service worker precache list so existing browser caches refresh and offline use stays available. Its scope is limited to this trip directory. Keep booking references, traveler phone numbers, payment information, and personal notes out of the public source.
 
 The site lives below the existing GitHub Pages homepage and does not replace it.
 
