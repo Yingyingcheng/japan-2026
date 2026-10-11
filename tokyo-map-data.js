@@ -64,12 +64,12 @@ window.TOKYO_MAP_POINTS = {
     "matched": "東京都新宿区内藤町１１番地",
     "source": "https://msearch.gsi.go.jp/address-search/AddressSearch?q=%E6%9D%B1%E4%BA%AC%E9%83%BD%E6%96%B0%E5%AE%BF%E5%8C%BA%E5%86%85%E8%97%A4%E7%94%BA11"
   },
-  "amanohaku": {
-    "lat": 35.689404,
-    "lon": 139.710587,
-    "query": "東京都新宿区新宿1-15-18",
-    "matched": "東京都新宿区新宿一丁目１５番１８号",
-    "source": "https://msearch.gsi.go.jp/address-search/AddressSearch?q=%E6%9D%B1%E4%BA%AC%E9%83%BD%E6%96%B0%E5%AE%BF%E5%8C%BA%E6%96%B0%E5%AE%BF1-15-18"
+  "tanbo": {
+    "lat": 35.682388,
+    "lon": 139.699783,
+    "query": "東京都渋谷区代々木1-41-9",
+    "matched": "東京都渋谷区代々木一丁目４１番９号",
+    "source": "https://msearch.gsi.go.jp/address-search/AddressSearch?q=%E6%9D%B1%E4%BA%AC%E9%83%BD%E6%B8%8B%E8%B0%B7%E5%8C%BA%E4%BB%A3%E3%80%85%E6%9C%A81-41-9"
   },
   "shinjuku-cat": {
     "lat": 35.692688,
@@ -239,7 +239,9 @@ window.TOKYO_MAP_ROUTES = {
     'sangen-jaya': { name: ['三軒茶屋', 'Sangen-jaya'], lon: 139.66907, lat: 35.64406 },
     'miyanosaka': { name: ['宮の坂', 'Miyanosaka'], lon: 139.64499, lat: 35.64783 },
     'gotokuji': { name: ['豪德寺', 'Gotokuji'], lon: 139.64685, lat: 35.65354 },
-    'yoyogi-hachiman': { name: ['代代木八幡', 'Yoyogi-Hachiman'], lon: 139.68884, lat: 35.66962 }
+    'yoyogi-hachiman': { name: ['代代木八幡', 'Yoyogi-Hachiman'], lon: 139.68884, lat: 35.66962 },
+    'jingumae-2-bus': { name: ['神宮前二丁目', 'Jingumae 2-chome'], lon: 139.71101, lat: 35.67476 },
+    'yoyogi-bus': { name: ['代々木駅', 'Yoyogi Station'], lon: 139.70199, lat: 35.68226 }
   },
   lines: {
     G: { name: ['銀座線', 'Ginza Line'], color: '#f39700' },
@@ -252,7 +254,8 @@ window.TOKYO_MAP_ROUTES = {
     JY: { name: ['JR 山手線', 'JR Yamanote Line'], color: '#80c241' },
     JB: { name: ['JR 中央・總武線', 'JR Chuo-Sobu Line'], color: '#f5c400' },
     SG: { name: ['世田谷線', 'Setagaya Line'], color: '#f2b705' },
-    OH: { name: ['小田急線', 'Odakyu Line'], color: '#1d8acb' }
+    OH: { name: ['小田急線', 'Odakyu Line'], color: '#1d8acb' },
+    HB: { name: ['ハチ公巴士', 'Hachikō Bus'], color: '#d9822b' }
   },
   areas: [
     { id: 'gaien', name: ['外苑', 'Gaien'], places: ['ginkgo', 'hm-cafe'] },
@@ -260,7 +263,7 @@ window.TOKYO_MAP_ROUTES = {
     { id: 'harajuku', name: ['原宿・貓街', 'Harajuku'], places: ['human-tokyo'] },
     { id: 'roppongi', name: ['六本木・西麻布', 'Roppongi'], places: ['roppongi-hills', 'gonpachi'] },
     { id: 'tomigaya', name: ['富谷・代代木公園', 'Tomigaya / Yoyogi'], places: ['fuglen-tokyo', 'yoyogi-park'] },
-    { id: 'gyoen', name: ['新宿御苑', 'Shinjuku Gyoen'], places: ['gyoen', 'amanohaku'] },
+    { id: 'gyoen', name: ['新宿御苑・代々木', 'Shinjuku Gyoen / Yoyogi'], short: ['新宿御苑', 'Shinjuku Gyoen'], places: ['gyoen', 'tanbo'] },
     { id: 'azabudai', name: ['麻布台', 'Azabudai'], places: ['ogawa-azabudai', 'teamlab'] },
     { id: 'shinjuku', name: ['新宿', 'Shinjuku'], places: ['shinjuku-cat', 'gelato-pique', 'echire-isetan'] },
     { id: 'ginza', name: ['銀座', 'Ginza'], places: ['hanayama', 'glitch', 'ginza', 'sushi-yu'] },
@@ -279,11 +282,12 @@ window.TOKYO_MAP_ROUTES = {
     },
     '2026-11-21': {
       legs: [
-        { to: 'hm-cafe', s: [{ w: 'est' }] },
-        { to: 'ginkgo', s: [{ w: 'est' }] },
-        { to: 'gyoen', s: [{ w: 20 }], alt: ['或計程車約 5 分', 'Or a taxi, about 5 min'] },
-        { to: 'amanohaku', s: [{ w: 3 }] },
-        { to: 'mameya', s: [{ w: 7 }, { l: 'F', a: 'shinjuku-sanchome', b: 'meiji-jingumae', m: 4, n: 2 }, { w: 7 }] },
+        { to: 'hm-cafe', s: [{ w: 8 }] },
+        { to: 'tanbo', s: [{ w: 4 }, { l: 'HB', a: 'jingumae-2-bus', b: 'yoyogi-bus', m: 22 }, { w: 3 }], note: ['神宮の杜ルート 8:11 班，繞經千駄ヶ谷、北參道；同名的都營巴士站在店門口，不是這個', 'Jingu-no-Mori route, 8:11 bus, looping via Sendagaya and Kitasando; the Toei stop of the same name by the shop is a different one'], alt: ['或計程車約 8 分', 'Or a taxi, about 8 min'] },
+        { to: 'gyoen', s: [{ w: '12–15' }], note: ['從新宿門進', 'Enter by the Shinjuku gate'] },
+        { to: 'ginkgo', s: [{ w: 15 }], note: ['千駄ヶ谷門出，經國立競技場到並木北端', 'Leave by the Sendagaya gate, past the National Stadium to the north end'] },
+        { to: 'hm-cafe', s: [{ w: 10 }], note: ['回來買聯名商品', 'Back for the collaboration goods'] },
+        { to: 'mameya', s: [{ w: 'est' }], note: ['中間可選：表參道輕食、散步', 'Optional on the way: a light lunch and an Omotesando stroll'] },
         { to: 'nezu', s: [{ w: 12 }] },
         { to: 'ippodo-aoyama', s: [{ w: '5–10' }] },
         { to: 'gentle-monster', s: [{ w: 8 }] },
