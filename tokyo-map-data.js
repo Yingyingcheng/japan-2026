@@ -212,3 +212,118 @@ window.TOKYO_MAP_POINTS = {
     "source": "https://msearch.gsi.go.jp/address-search/AddressSearch?q=%E6%9D%B1%E4%BA%AC%E9%83%BD%E4%B8%AD%E5%A4%AE%E5%8C%BA%E9%8A%80%E5%BA%A76-10-1"
   }
 };
+
+/* How we travel between stops: train line, boarding and alighting stations, and minutes from the itinerary notes.
+   Station points come from OpenStreetMap (via OpenFreeMap). Legs are listed in visiting order and matched by
+   their destination; `w: 'est'` means the walking time is estimated from distance, `w: 0` means not stated. */
+window.TOKYO_MAP_ROUTES = {
+  narita: { name: ['成田機場', 'Narita Airport'], lon: 140.3929, lat: 35.772 },
+  stations: {
+    'gaiemmae': { name: ['外苑前', 'Gaiemmae'], lon: 139.71789, lat: 35.67047 },
+    'omotesando': { name: ['表參道', 'Omotesando'], lon: 139.71254, lat: 35.66516 },
+    'aoyama-itchome': { name: ['青山一丁目', 'Aoyama-itchome'], lon: 139.72401, lat: 35.67278 },
+    'meiji-jingumae': { name: ['明治神宮前', 'Meiji-jingumae'], lon: 139.70436, lat: 35.66897 },
+    'shinjuku-sanchome': { name: ['新宿三丁目', 'Shinjuku-sanchome'], lon: 139.70478, lat: 35.69074 },
+    'shinjuku': { name: ['新宿', 'Shinjuku'], lon: 139.7006, lat: 35.69 },
+    'harajuku': { name: ['原宿', 'Harajuku'], lon: 139.70243, lat: 35.67021 },
+    'shinanomachi': { name: ['信濃町', 'Shinanomachi'], lon: 139.72049, lat: 35.68003 },
+    'ginza': { name: ['銀座', 'Ginza'], lon: 139.7631, lat: 35.67284 },
+    'higashi-ginza': { name: ['東銀座', 'Higashi-Ginza'], lon: 139.76695, lat: 35.66968 },
+    'kyobashi': { name: ['京橋', 'Kyobashi'], lon: 139.77004, lat: 35.6767 },
+    'tokyo': { name: ['東京', 'Tokyo'], lon: 139.7667, lat: 35.68126 },
+    'hongo-sanchome': { name: ['本鄉三丁目', 'Hongo-sanchome'], lon: 139.75997, lat: 35.70664 },
+    'todaimae': { name: ['東大前', 'Todaimae'], lon: 139.75817, lat: 35.71734 },
+    'roppongi-itchome': { name: ['六本木一丁目', 'Roppongi-itchome'], lon: 139.73885, lat: 35.66498 },
+    'kamiyacho': { name: ['神谷町', 'Kamiyacho'], lon: 139.74505, lat: 35.66296 },
+    'roppongi': { name: ['六本木', 'Roppongi'], lon: 139.73133, lat: 35.66284 },
+    'sangen-jaya': { name: ['三軒茶屋', 'Sangen-jaya'], lon: 139.66907, lat: 35.64406 },
+    'miyanosaka': { name: ['宮の坂', 'Miyanosaka'], lon: 139.64499, lat: 35.64783 },
+    'gotokuji': { name: ['豪德寺', 'Gotokuji'], lon: 139.64685, lat: 35.65354 },
+    'yoyogi-hachiman': { name: ['代代木八幡', 'Yoyogi-Hachiman'], lon: 139.68884, lat: 35.66962 }
+  },
+  lines: {
+    G: { name: ['銀座線', 'Ginza Line'], color: '#f39700' },
+    M: { name: ['丸之內線', 'Marunouchi Line'], color: '#e60012' },
+    H: { name: ['日比谷線', 'Hibiya Line'], color: '#8fa4ae' },
+    N: { name: ['南北線', 'Namboku Line'], color: '#00ada9' },
+    Z: { name: ['半藏門線（直通田園都市線）', 'Hanzomon Line (through to Den-en-toshi)'], color: '#8f76d6' },
+    F: { name: ['副都心線', 'Fukutoshin Line'], color: '#9c5e31' },
+    E: { name: ['大江戶線', 'Oedo Line'], color: '#ce045b' },
+    JY: { name: ['JR 山手線', 'JR Yamanote Line'], color: '#80c241' },
+    JB: { name: ['JR 中央・總武線', 'JR Chuo-Sobu Line'], color: '#f5c400' },
+    SG: { name: ['世田谷線', 'Setagaya Line'], color: '#f2b705' },
+    OH: { name: ['小田急線', 'Odakyu Line'], color: '#1d8acb' }
+  },
+  areas: [
+    { id: 'gaien', name: ['外苑', 'Gaien'], places: ['ginkgo', 'hm-cafe'] },
+    { id: 'omotesando', name: ['表參道・南青山', 'Omotesando / Minami-Aoyama'], short: ['表參道', 'Omotesando'], places: ['mameya', 'nezu', 'ippodo-aoyama', 'gentle-monster', 'higuma', 'afuri', 'yoroniku'] },
+    { id: 'harajuku', name: ['原宿・貓街', 'Harajuku'], places: ['human-tokyo'] },
+    { id: 'roppongi', name: ['六本木・西麻布', 'Roppongi'], places: ['roppongi-hills', 'gonpachi'] },
+    { id: 'tomigaya', name: ['富谷・代代木公園', 'Tomigaya / Yoyogi'], places: ['fuglen-tokyo', 'yoyogi-park'] },
+    { id: 'gyoen', name: ['新宿御苑', 'Shinjuku Gyoen'], places: ['gyoen', 'amanohaku'] },
+    { id: 'azabudai', name: ['麻布台', 'Azabudai'], places: ['ogawa-azabudai', 'teamlab'] },
+    { id: 'shinjuku', name: ['新宿', 'Shinjuku'], places: ['shinjuku-cat', 'gelato-pique', 'echire-isetan'] },
+    { id: 'ginza', name: ['銀座', 'Ginza'], places: ['hanayama', 'glitch', 'ginza', 'sushi-yu'] },
+    { id: 'tokyo-station', name: ['東京車站', 'Tokyo Station'], places: ['shinchan'] },
+    { id: 'hongo', name: ['本鄉・東大', 'Hongo'], places: ['todai'] },
+    { id: 'gotokuji', name: ['豪德寺', 'Gotokuji'], places: ['gotokuji'] }
+  ],
+  days: {
+    '2026-11-20': {
+      start: 'narita',
+      legs: [
+        { to: 'aoyama', s: [{ car: 68 }], note: ['先搭免費接駁巴士到 T2，司機在 Door North 3 等', 'Free shuttle bus to T2; the driver waits at Door North 3'] },
+        { to: 'afuri', s: [{ w: 'est' }] },
+        { to: 'aoyama', s: [{ w: 'est' }] }
+      ]
+    },
+    '2026-11-21': {
+      legs: [
+        { to: 'hm-cafe', s: [{ w: 'est' }] },
+        { to: 'ginkgo', s: [{ w: 'est' }] },
+        { to: 'gyoen', s: [{ w: 20 }], alt: ['或計程車約 5 分', 'Or a taxi, about 5 min'] },
+        { to: 'amanohaku', s: [{ w: 3 }] },
+        { to: 'mameya', s: [{ w: 7 }, { l: 'F', a: 'shinjuku-sanchome', b: 'meiji-jingumae', m: 4, n: 2 }, { w: 7 }] },
+        { to: 'nezu', s: [{ w: 12 }] },
+        { to: 'ippodo-aoyama', s: [{ w: '5–10' }] },
+        { to: 'gentle-monster', s: [{ w: 8 }] },
+        { to: 'human-tokyo', s: [{ w: 'est' }], note: ['沿御幸通、貓街邊走邊逛', 'Shop along Miyuki-dori and Cat Street'] },
+        { to: 'aoyama', s: [{ w: 0 }, { l: 'G', a: 'omotesando', b: 'gaiemmae', n: 1 }] },
+        { to: 'yoroniku', s: [{ l: 'G', a: 'gaiemmae', b: 'omotesando', n: 1 }, { w: 10 }], alt: ['或從飯店散步 20–25 分', 'Or walk from the hotel, 20–25 min'] },
+        { to: 'aoyama', s: [{ w: 'est' }] }
+      ]
+    },
+    '2026-11-22': {
+      legs: [
+        { to: 'hanayama', s: [{ l: 'G', a: 'gaiemmae', b: 'ginza', m: 15 }, { w: 7 }] },
+        { to: 'glitch', s: [{ w: 3 }], note: ['先抽號碼牌，再去喝咖啡', 'Get the queue ticket first, then coffee'] },
+        { to: 'hanayama', s: [{ w: 3 }] },
+        { to: 'todai', s: [{ w: 8 }, { l: 'M', a: 'ginza', b: 'hongo-sanchome', m: 12 }, { w: 8 }] },
+        { to: 'ogawa-azabudai', s: [{ l: 'N', a: 'todaimae', b: 'roppongi-itchome', m: 20 }, { w: 0 }], note: ['地下通道直通麻布台之丘', 'Underground passage to Azabudai Hills'] },
+        { to: 'teamlab', s: [{ w: 'est' }], note: ['隔壁棟', 'Next building'] },
+        { to: 'shinchan', s: [{ l: 'H', a: 'kamiyacho', b: 'ginza', m: 6, n: 3 }, { l: 'M', a: 'ginza', b: 'tokyo', n: 1 }, { w: 10 }], t: '30' },
+        { to: 'ginza', s: [{ l: 'M', a: 'tokyo', b: 'ginza', n: 1 }] },
+        { to: 'sushi-yu', s: [{ w: 10 }] },
+        { to: 'aoyama', s: [{ w: 8 }, { l: 'G', a: 'kyobashi', b: 'gaiemmae', m: 15 }] }
+      ],
+      alts: [
+        { skip: 'todai', s: [{ l: 'H', a: 'higashi-ginza', b: 'kamiyacho', m: 10 }], label: ['跳過東大的話', 'If we skip UTokyo'] }
+      ]
+    },
+    '2026-11-23': {
+      legs: [
+        { to: 'higuma', s: [{ w: 9 }] },
+        { to: 'gotokuji', s: [{ w: 0 }, { l: 'Z', a: 'omotesando', b: 'sangen-jaya', m: 10, n: 3 }, { w: 3 }, { l: 'SG', a: 'sangen-jaya', b: 'miyanosaka', m: 15 }, { w: 5 }], t: '35–40', note: ['世田谷線有機會搭到招財貓電車', 'The Setagaya Line may run the lucky-cat tram'] },
+        { to: 'fuglen-tokyo', s: [{ l: 'OH', a: 'gotokuji', b: 'yoyogi-hachiman', m: 15 }, { w: 3 }] },
+        { to: 'yoyogi-park', s: [{ w: 'est' }], note: ['途中外帶八十八 Hatoya 抹茶', 'Pick up Hatoya matcha on the way'] },
+        { to: 'shinjuku-cat', s: [{ w: 0 }, { l: 'JY', a: 'harajuku', b: 'shinjuku', m: 4 }], note: ['穿過公園走到原宿門', 'Walk through the park to the Harajuku gate'] },
+        { to: 'gelato-pique', s: [{ w: 'est' }] },
+        { to: 'echire-isetan', s: [{ w: 'est' }] },
+        { to: 'ginkgo', s: [{ l: 'JB', a: 'shinjuku', b: 'shinanomachi', m: 6, n: 3 }, { w: 7 }] },
+        { to: 'roppongi-hills', s: [{ w: 0 }, { l: 'G', a: 'gaiemmae', b: 'aoyama-itchome', n: 1 }, { l: 'E', a: 'aoyama-itchome', b: 'roppongi', n: 2 }, { w: 5 }], t: '20' },
+        { to: 'gonpachi', s: [{ w: 10 }] },
+        { to: 'aoyama', s: [{ l: 'E', a: 'roppongi', b: 'aoyama-itchome', n: 2 }, { l: 'G', a: 'aoyama-itchome', b: 'gaiemmae', n: 1 }] }
+      ]
+    }
+  }
+};
