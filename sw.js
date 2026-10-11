@@ -1,4 +1,4 @@
-const CACHE = 'autumn-japan-2026-20261010-v51';
+const CACHE = 'autumn-japan-2026-20261010-v53';
 const FILES = ['./', './index.html', './styles.css', './data.js', './app.js', './en.js', './i18n.js', './manifest-en.webmanifest', './manifest.webmanifest', './assets/fuji.jpg', './assets/tokyo.jpg', './assets/kyoto.jpg', './assets/icon.svg', './assets/icon-192.png', './assets/icon-512.png', './assets/narita-pickup.jpg'];
 self.addEventListener('install', event => {
   event.waitUntil(caches.open(CACHE).then(cache => cache.addAll(FILES)).then(() => self.skipWaiting()));

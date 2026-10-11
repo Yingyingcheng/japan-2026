@@ -23,6 +23,13 @@ window.TRIP = {
     place('shinjuku-cat', '新宿東口的 3D 貓貓看板', '新宿東口の猫（クロス新宿ビジョン）', '東京', '新宿東口', '景點', '東口廣場對面大樓上的巨型 3D 三花貓。', { address: '東京都新宿区新宿3-23-18', hours: '7:00–25:00；每小時 :00、:15、:30、:45 播放約 2 分鐘', source: 'https://www.xspace.tokyo/' }),
     place('gelato-pique', 'LUMINE EST 新宿（gelato pique）', 'ルミネエスト新宿 gelato pique', '東京', '新宿東口', '購物', '新宿東口車站直結的百貨，流行服飾與雜貨多；B2F 有 gelato pique 家居服與毛絨睡衣。', { address: '東京都新宿区新宿3-38-1 ルミネエスト新宿 B2F', hours: '週末 10:30–21:00', source: 'https://www.lumine.ne.jp/est/', note: 'gelato pique 在 LUMINE 2 的 2F 還有一間（11:00–21:00），可比較款式。兩店都可免稅。' }),
     place('nezu', '根津美術館', '根津美術館', '東京', '表參道・南青山', '景點', '隈研吾設計的竹林入口與大片日式庭園，秋天有楓紅。', { address: '東京都港区南青山6-5-1', hours: '10:00–17:00（最後入館 16:30）；週一休館', source: 'https://www.nezu-muse.or.jp/', booking: 'https://www.nezu-muse.or.jp/', note: '需線上預約日期與時段。特展「舞樂裝束」10/24–11/23，¥1,600；現場票加 ¥200 且可能售完。NEZUCAFE 營業到 16:30。' }),
+    place('gentle-monster', 'GENTLE MONSTER 東京青山', 'GENTLE MONSTER 東京青山', '東京', '南青山・御幸通', '購物', '韓國眼鏡品牌的旗艦店，店裡像當代藝術展，太陽眼鏡和聯名款最齊。', { address: '東京都港区南青山5-3-2 The Jewels of Aoyama 1–2F', phone: '+81364197283', hours: '11:00–20:00（購買到 19:45）', source: 'https://www.gentlemonster.com/jp/ja/stores/detail/779149704689218100', note: '御幸通上，過了 Prada、YOKU MOKU 前面那棟。人多時會限制入店。' }),
+    place('tamburins-aoyama', 'TAMBURINS 東京青山', 'TAMBURINS 東京青山', '東京', '南青山・御幸通', '購物', 'Gentle Monster 旗下的香氛品牌：香水、護手霜、香膏，包裝很好送禮。', { address: '東京都港区南青山5-3-2 The Jewels of Aoyama', phone: '+81364279673', hours: '11:00–20:00', source: 'https://www.tamburins.com/jp/store/japan/', note: '和 Gentle Monster 同一棟。11/23 去的伊勢丹新宿本館 2F 也有櫃位。' }),
+    place('lelabo-aoyama', 'LE LABO 青山', 'ル ラボ 青山', '東京', '南青山', '購物', '現場調配、標籤印上名字和日期的香水；招牌 Santal 33，也有東京城市限定香 Gaiac 10。', { address: '東京都港区南青山5-5-24', phone: '+81364197167', hours: '11:00–20:00', source: 'https://www.lelabofragrances.jp/pages/locations', note: '在御幸通往表參道站 B1 出口方向的巷子裡，從 Gentle Monster 走約 3 分鐘。' }),
+    place('panpuri-aoyama', 'PAÑPURI 青山', 'PAÑPURI 青山', '東京', '南青山', '購物', '泰國香氛品牌在日本的第一家旗艦店，可以從最多 40 種原料調一款自己的香。', { address: '東京都港区南青山5-6-5', phone: '+81364276223', hours: '11:00–20:00', source: 'https://panpuri.jp/pages/panpuri-sensorial-boutique-aoyama', note: '從 Gentle Monster 往骨董通方向走約 3 分鐘。客製調香要另外確認時間。' }),
+    place('diptyque-omotesando', 'DIPTYQUE 表參道', 'ディプティック 表参道', '東京', '表參道・貓街', '購物', '2025 年開的綠色立面旗艦店，有只在這家賣的 200ml 版 Do Son、Fleur de Peau、Orphéon。', { address: '東京都渋谷区神宮前5-10-10 1F', hours: '11:00–20:00', source: 'https://jp.diptyqueparis.com/ja-jp/pages/diptyque-omotesando', note: '貓街南端入口附近，往 HUMAN MADE 的路上。' }),
+    place('byredo-omotesando', 'BYREDO 表參道', 'BYREDO Tokyo Omotesando', '東京', '表參道', '購物', '瑞典香水品牌，香水、居家香氛、皮件全系列都有。', { address: '東京都渋谷区神宮前5-12-1 マハール表参道 1F', phone: '+81364335576', hours: '11:00–20:00', source: 'https://stores.byredo.com/ja/byredo-tokyo-omotesando', note: '在表參道和貓街之間，離 DIPTYQUE 很近。' }),
+    place('margiela-replica', 'Maison Margiela REPLICA 香氛旗艦店', 'メゾン マルジェラ フレグランス 表参道', '東京', '原宿・貓街', '購物', 'REPLICA 系列（慵懶週日、爵士俱樂部、溫暖壁爐）的旗艦店，可以全部試香。', { address: '東京都渋谷区神宮前6-7-10', phone: '+81364272823', hours: '11:00–20:00', source: 'https://www.fashion-press.net/maps/62542', note: '貓街北段，2026 年 7 月重新裝修開幕。從這裡走到 HUMAN MADE 約 5 分鐘。' }),
     place('ippodo-aoyama', '一保堂茶舖 青山店', '一保堂茶舗 青山店', '東京', '表參道・南青山', '咖啡甜點', '京都三百年茶舖 2025 年開的東京路面店，2F 有賣場和 21 席喫茶室，可以喝到現泡的抹茶、煎茶、玉露。', { address: '東京都港区南青山4-23-6 2F', phone: '+81364273211', hours: '10:00–18:00（喫茶 L.O. 17:30）；週一公休', source: 'https://www.ippodo-tea.co.jp/pages/store-aoyama', note: '喫茶室可預約，飲料也可外帶。表參道站 A5 出口步行約 8 分鐘。' }),
     place('mameya', 'KOFFEE MAMEYA', 'KOFFEE MAMEYA', '東京', '表參道', '咖啡甜點', '豆單很深的手沖咖啡吧，可請咖啡師依喜好推薦。', { address: '東京都渋谷区神宮前4-15-3', hours: '10:00–18:00（L.O. 17:30）', source: 'https://www.koffee-mameya.com/', note: '可線上預約到店時間（14 天前開放）。每組最多停留 45 分鐘，遲到超過 15 分鐘會取消。' }),
     place('roppongi-hills', '六本木之丘 けやき坂燈飾', '六本木ヒルズ けやき坂', '東京', '六本木', '景點', '藍白色的聖誕燈海，坡道盡頭可同框東京鐵塔。', { hours: '燈飾 17:00–22:00（11/5–12/25）', source: 'https://www.roppongihills.com/', note: '聖誕市集 11/21 開幕，11:00–21:00 在大屋根廣場。毛利庭園燈飾到 23:00。' }),
@@ -35,7 +42,7 @@ window.TRIP = {
     place('yoyogi-park', '代代木公園', '代々木公園', '東京', '代代木・原宿', '景點', '都心的大片草地與樹林，秋天有銀杏和楓紅。', { source: 'https://www.tokyo-park.or.jp/park/yoyogi/', note: '從富谷那側進園，往北穿過公園到原宿門，出來就是 JR 原宿站。' }),
     place('hatoya', '八十八 澀谷 Hatoya', '八十八 渋谷', '東京', '神山町・富谷', '咖啡甜點', '抹茶飲品專門的茶飲站，離 Fuglen 步行約 5 分鐘。', { address: '東京都渋谷区神山町3-8 1F', hours: '9:00–18:00', source: 'https://tabelog.com/tokyo/A1318/A131810/13311220/', note: '不接受預約，可外帶。代代木公園站步行約 5 分鐘。' }),
     place('kagari', '銀座 篝 本店', '銀座 篝 本店', '東京', '銀座', '餐飲', '濃郁如濃湯的雞白湯拉麵。', { address: '東京都中央区銀座6-4-12 1F', hours: '11:00–21:30（受理到 21:00）', source: 'https://tabelog.com/tokyo/A1301/A130101/13230021/', note: '不接受預約，現場排隊。備案：篝 六本木之丘店（メトロハット／ハリウッドプラザ B2F，11:00–22:00）。' }),
-    place('gotokuji', '招財貓發源地｜世田谷 豪德寺', '豪徳寺', '東京', '世田谷', '景點', '招財貓的發源地，招福殿旁擺滿參拜者供奉的白色招財貓。', { address: '東京都世田谷区豪徳寺2-24-7', hours: '6:00–17:00；寺務所（招財貓、御朱印）8:00–15:00', source: 'https://gotokuji.jp/', note: '小田急線豪德寺站步行約 10–15 分鐘，東急世田谷線宮の坂站步行 5 分鐘。招福猫兒 ¥500 起，部分尺寸可能缺貨。' }),
+    place('gotokuji', '招財貓發源地｜世田谷 豪德寺', '豪徳寺', '東京', '世田谷', '景點', '招財貓的發源地，招福殿旁擺滿參拜者供奉的白色招財貓。', { address: '東京都世田谷区豪徳寺2-24-7', hours: '6:00–17:00；寺務所（招財貓、御朱印）8:00–15:00', source: 'https://gotokuji.jp/', secondSource: 'https://www.tokyu.co.jp/railway/nekodensya/timetable/', note: '小田急線豪德寺站步行約 10–15 分鐘，東急世田谷線宮の坂站步行 5 分鐘。招福猫兒 ¥500 起，部分尺寸可能缺貨。' }),
     place('shimokitazawa', '下北澤', '下北沢', '東京', '下北澤', '購物', '古著、獨立選物店與小咖啡館的街區。', { note: '多數古著店約 11:00–12:00 開門。可以逛：沿舊鐵道的 reload 與 BONUS TRACK（選物、小店、外帶小吃）、東洋百貨店等古著市集、站前一帶的二手衣店與 Village Vanguard。' }),
     place('ogawa-lab', 'OGAWA COFFEE LABORATORY 下北澤', 'OGAWA COFFEE LABORATORY 下北沢', '東京', '下北澤', '咖啡甜點', '京都小川珈琲的「體驗型咖啡沙龍」：13 種單品豆都能試飲，也能自己挑器具手沖。', { address: '東京都世田谷区北沢3-19-20 reload1-1', hours: '9:00–20:00（L.O. 19:30）', source: 'https://www.oc-ogawa.co.jp/ocl-shimokitazawa/', note: '下北澤站東口步行約 4 分鐘，在 reload 裡。' }),
     place('ogawa-azabudai', 'OGAWA COFFEE LABORATORY 麻布台', 'OGAWA COFFEE LABORATORY 麻布台', '東京', '神谷町・麻布台', '咖啡甜點', '京都小川珈琲的豆子沙龍：可以和咖啡師一起挑生豆、焙煎、調出自己的配方。', { address: '東京都港区麻布台1-2-4 麻布台ヒルズ ガーデンプラザC B1F（麻布台ヒルズマーケット內）', hours: '平日 8:00–20:00；週末／假日 10:00–20:00（L.O. 19:30）', source: 'https://www.oc-ogawa.co.jp/shop/', note: '小川珈琲在東京還有下北澤、櫻新町、高輪店，沒有自由之丘店。' }),
@@ -115,13 +122,13 @@ window.TRIP = {
     place('lake', '河口湖北岸湖畔', '長崎公園 河口湖', '河口湖', '長崎公園', '景點', '住宿附近的湖景與富士山視角。能見度好就把時間留給湖邊。'),
     place('oishi', '大石公園', '大石公園 河口湖', '河口湖', '河口湖北岸', '景點', '湖面與富士山的經典畫面。與 Sunnide 同在北岸。'),
     place('maple', '河口湖紅葉迴廊', '河口湖もみじ回廊', '河口湖', '河口湖北岸', '景點', '2026 紅葉祭 11/7–11/29；日落後點燈至 21:00。', { source: 'https://fujisan.ne.jp/news/6065/', note: '祭典日期已公布；楓葉狀況與山景仍受當年天氣影響。晚餐後有體力再去看點燈。' }),
-    place('hoho', 'HOHO HOJICHA 京都車站', 'HOHO HOJICHA 京都駅', '京都', '京都車站', '咖啡甜點', '到京都的第一杯焙茶，以及原清單想買的焙茶伴手禮。', { source: 'https://www.hohohojicha.com/' }),
+    place('hoho', 'HOHO HOJICHA 京都車站', 'HOHO HOJICHA 京都駅', '京都', '京都車站', '咖啡甜點', '原清單想喝的焙茶，以及想買的焙茶伴手禮。', { source: 'https://www.hohohojicha.com/' }),
     place('human-kyoto', 'HUMAN MADE 1928', 'HUMAN MADE 1928', '京都', '三條・御幸町', '購物', '老建築裡的品牌選物，與新風館和市中心散步安排同一段。', { address: '京都府京都市中京区弁慶石町56', hours: '11:00–19:00', source: 'https://www.humanmade.jp/dealers.html' }),
     place('ippodo', '一保堂茶舖 京都本店', '一保堂茶舗 京都本店', '京都', '寺町・二條', '購物', '原清單的抹茶與茶葉伴手禮。下午早一點去，留時間慢慢挑。', { source: 'https://www.ippodo-tea.co.jp/' }),
     place('shinpukan', '新風館', '新風館 京都', '京都', '烏丸御池', '購物', '1LDK Kyoto、BEAMS JAPAN、Pilgrim Surf+Supply 的選物候選集中區。', { source: 'https://shinpuhkan.jp/' }),
     place('blend-kyoto', 'blend kyoto', 'blend kyoto ブレンド京都 御所南本店', '京都', '御所南', '咖啡甜點', '百年京町家改建的配方豆專門店：從單品豆組出自己的配方，也可以請店員依喜好推薦。可內用、外帶，也能買豆子回家。', { address: '京都府京都市中京区竹屋町通麩屋町東入笹屋町447', phone: '+81752654208', hours: '10:00–18:00', source: 'https://blend.kyoto/pages/stores', note: '沒有固定公休，但有活動時會臨時休息，出發前看官網營業日曆。從一保堂步行約 7 分鐘。' }),
     place('smart-coffee', 'スマート珈琲店 Smart Coffee', 'スマート珈琲店', '京都', '寺町・三條', '咖啡甜點', '1932 年開業的寺町老喫茶店，自家烘焙咖啡配招牌鬆餅（ホットケーキ）或法式吐司。', { address: '京都府京都市中京区寺町通三条上ル天性寺前町537', phone: '+81752316547', hours: '8:00–19:00；2F 午餐 11:00–14:30 L.O.（週二休）', source: 'https://www.smartcoffee.jp/information', note: '不接受預約，常要排隊；1F 喫茶全天都有鬆餅。' }),
-    place('kyo-chabana', '京ちゃばな 京都車站前店', '京ちゃばな 京都駅前店', '京都', '京都車站', '餐飲', '京都風御好燒與鐵板燒。招牌是番茄御好燒、和牛裙肉御好燒，還有抹茶蕎麥麵做的炒麵。', { address: '京都府京都市下京区木津屋橋通烏丸西入東塩小路町578 まつやビル1F', phone: '+81753527357', hours: '11:00–23:00（L.O. 22:30），全年無休', source: 'https://kyochabana-kyotostation.com/', booking: 'https://www.hotpepper.jp/strJ000735737/yoyaku/hpds', note: '京都車站中央口步行約 3 分鐘，京都塔斜對面。可以在 Hot Pepper 網路訂位，用餐限 2 小時。' }),
+    place('kyo-chabana', '京ちゃばな 京都車站前店', '京ちゃばな 京都駅前店', '京都', '京都車站', '餐飲', '京都風御好燒與鐵板燒。招牌是番茄御好燒、和牛裙肉御好燒，還有抹茶蕎麥麵做的炒麵。', { address: '京都府京都市下京区木津屋橋通烏丸西入東塩小路町578 まつやビル1F', phone: '+81753527357', hours: '11:00–23:00（L.O. 22:30），全年無休', source: 'https://kyochabana-kyotostation.com/', booking: 'https://www.hotpepper.jp/strJ000735737/yoyaku/hpds', note: '排在 11/27 從嵐山回來的晚餐。京都車站中央口步行約 3 分鐘，京都塔斜對面。可以在 Hot Pepper 網路訂位，用餐限 2 小時。' }),
     place('tofukuji', '東福寺', '東福寺 通天橋', '京都', '東山南部', '景點', '原清單的紅葉重點。安排在上午；賞楓旺季平日也可能排隊。', { source: 'https://tofukuji.jp/' }),
     place('lorimer', 'Lorimer Kyoto', 'LORIMER KYOTO', '京都', '五條', '餐飲', '原清單的一汁三菜烤魚定食候選。先查當日營業與是否需預約。', { address: '京都府京都市下京区橋詰町143', phone: '+81757416479', source: 'https://www.lorimerkyoto.com/', note: '官網標示週二、週三休息。預約僅限指定套餐，請先看當前菜單與訂位說明。' }),
     place('kiyomizu', '清水寺', '清水寺', '京都', '東山', '景點', '古街與紅葉的一天。2026 秋季夜間特別拜觀為 11/21–11/30，21:00 最後入場、21:30 閉門。', { source: 'https://www.kiyomizudera.or.jp/en/visit/', note: '清水寺與嵐山分開兩天，減少穿和服跨城趕車。是否夜間再入場，依體力決定。' }),
@@ -151,7 +158,7 @@ window.TRIP = {
       { time: '約 19:30', place: 'aoyama', detail: '預估入住時間，依入境與路況調整。先放行李、稍微整理。' },
       { time: '約 20:30', place: 'afuri', detail: '從飯店步行前往；若班機或入境延誤，先確認店家是否仍供餐。' }
     ] },
-    { date: '2026-11-21', city: '東京', label: '御苑與南青山', title: '御苑銀杏、鰻魚飯與夢幻燒肉', subtitle: '兩杯咖啡、一座庭園美術館，最後用よろにく收尾。', hotel: 'aoyama', color: 'tokyo', route: '外苑前 → 銀杏並木 → 新宿御苑 → 表參道 → 根津美術館 → 一保堂青山 → 御幸通 → 南青山', tip: '先訂好：天ノ箔 12:30 午餐、KOFFEE MAMEYA 13:45、根津美術館 14:30 時段（必須預約）。根津美術館就在御幸通底端，看完一路逛回表參道。', items: [
+    { date: '2026-11-21', city: '東京', label: '御苑與南青山', title: '御苑銀杏、鰻魚飯與夢幻燒肉', subtitle: '兩杯咖啡、一座庭園美術館，最後用よろにく收尾。', hotel: 'aoyama', color: 'tokyo', route: '外苑前 → 銀杏並木 → 新宿御苑 → 表參道 → 根津美術館 → 一保堂青山 → Gentle Monster → 御幸通 → 貓街 → 南青山', tip: '先訂好：天ノ箔 12:30 午餐、KOFFEE MAMEYA 13:45、根津美術館 14:30 時段（必須預約）。根津美術館就在御幸通底端，看完一路逛回表參道。', items: [
       { time: '10:00', place: 'hm-cafe', detail: '第 1 杯咖啡。咖啡 8:00 就開賣，聯名商品要等服飾區 11:00 開。不必在這裡等，店離飯店很近，其他天 11:00 後再回來買。' },
       { time: '10:30', place: 'ginkgo', detail: '從咖啡店走到青山通側的入口，沿並木往北散步拍照。11/21 葉子可能還在轉黃。', nearby: ['kaigakan'] },
       { time: '11:15', place: 'gyoen', detail: '從並木北端走約 20 分鐘（經千駄ヶ谷站）到千駄ヶ谷門，或搭計程車約 5 分鐘。一路散步到大木戸門出口。' },
@@ -160,7 +167,8 @@ window.TRIP = {
       { time: '13:45', place: 'mameya', detail: '第 2 杯咖啡，飯後剛好。最多停留 45 分鐘；喝完步行約 12 分鐘到根津美術館。', pending: true, bookingId: 'mameya-booking', nearby: ['omotesando-hills', 'dior-omotesando', 'tods-omotesando', 'gyre'] },
       { time: '14:30', place: 'nezu', detail: '東京 11 月下旬約 16:30 日落，先逛庭園再看展。最後入館 16:30。', pending: true, bookingId: 'nezu-booking', nearby: ['taro', 'prada-aoyama', 'cdg-aoyama', 'issey-aoyama'] },
       { time: '15:50', place: 'ippodo-aoyama', detail: '根津美術館看完步行約 5–10 分鐘。坐下來喝一杯現泡的抹茶或煎茶休息腳，也可以外帶、買茶葉當伴手禮。週六下午人多，可以先預約喫茶室（L.O. 17:30）。' },
-      { time: '16:45', place: 'human-tokyo', title: 'HUMAN MADE TOKYO × KITH TOKYO', detail: '從一保堂沿御幸通逛回表參道，再到原宿：Comme des Garçons、Prada、Acne Studios 都在御幸通；HUMAN MADE TOKYO 週六開到 20:00；Onitsuka Tiger、表參道之丘多半 20:00 關門。', nearby: ['tiger', 'cat-street', 'omokado', 'harakado', 'takeshita', 'beams-harajuku', 'ua-harajuku', 'stussy-harajuku', 'supreme-harajuku', 'kith', 'union-tokyo', 'bape-harajuku', 'atmos-harajuku', 'neighborhood-harajuku', 'palace-tokyo'] },
+      { time: '16:30', place: 'gentle-monster', title: 'GENTLE MONSTER × TAMBURINS 青山', detail: '從一保堂往表參道方向走約 8 分鐘，兩個品牌在同一棟：1–2F 是 Gentle Monster 眼鏡，TAMBURINS 香氛也在這裡。停 30 分鐘左右。旁邊的 LE LABO、PAÑPURI 順路；DIPTYQUE、BYREDO、Margiela 在往貓街的路上，挑 2–3 家就好，多數 20:00 關門。', nearby: ['tamburins-aoyama', 'lelabo-aoyama', 'panpuri-aoyama', 'diptyque-omotesando', 'byredo-omotesando', 'margiela-replica'] },
+      { time: '17:15', place: 'human-tokyo', title: 'HUMAN MADE TOKYO × KITH TOKYO', detail: '沿御幸通逛回表參道，再經貓街到原宿：Comme des Garçons、Prada、Acne Studios 都在御幸通；HUMAN MADE TOKYO 週六開到 20:00；Onitsuka Tiger、表參道之丘多半 20:00 關門。', nearby: ['tiger', 'cat-street', 'omokado', 'harakado', 'takeshita', 'beams-harajuku', 'ua-harajuku', 'stussy-harajuku', 'supreme-harajuku', 'kith', 'union-tokyo', 'bape-harajuku', 'atmos-harajuku', 'neighborhood-harajuku', 'palace-tokyo'] },
       { time: '20:00', title: '回飯店放東西、休息', detail: '表參道站搭銀座線 1 站到外苑前，先放購物袋、休息一下，21:30 再出門吃燒肉。' },
       { time: '21:45', place: 'yoroniku', detail: '外苑前搭銀座線 1 站到表參道，B1 出口步行約 10 分鐘；或從飯店散步約 20–25 分鐘。最後點餐 23:00。', confirmed: true }
     ] },
@@ -179,10 +187,10 @@ window.TRIP = {
       { time: '18:40', place: 'ginza', detail: '東京站搭丸之內線 1 站到銀座。DOLCE TACUBO 19:00 關門，想吃就先直奔七丁目；再一路往北逛：UNIQLO／Dover Street Market（六丁目）→ GINZA SIX → 四丁目路口 → 伊東屋（二丁目）。多數店 20:00 關門，19:45 往銀座一丁目走去吃壽司。', nearby: ['dolce-tacubo', 'itoya', 'muji-ginza', 'dsm-ginza', 'uniqlo-ginza', 'sony-park', 'hermes-ginza'] },
       { time: '20:00', place: 'sushi-yu', detail: '從中央通走約 10 分鐘到銀座一丁目，大樓 8F。獨立櫃檯おまかせ。吃完走約 8 分鐘到京橋站，銀座線直達外苑前約 15 分鐘。', confirmed: true }
     ] },
-    { date: '2026-11-23', city: '東京', label: '豪德寺與新宿', title: '甜甜圈、招財貓、北歐咖啡與權八', subtitle: '表參道出發，繞一圈回到西麻布：世田谷 → 富谷 → 代代木公園 → 新宿。', hotel: 'aoyama', color: 'tokyo', route: '表參道 → 豪德寺 → 富谷 → 代代木公園 → 新宿東口 → 外苑 → 六本木之丘 → 西麻布', tip: '日本勤勞感謝日（週一國定假日），Higuma 假日 10:00 開。小田急線把豪德寺和 Fuglen（代代木八幡）串成一直線，散步穿過代代木公園再去新宿。新宿逛到 17:15，艾許奶油在伊勢丹 B1 買。晚餐權八先訂位。晚上整理河口湖一晚的小行李；明天 9:00 退房，大件行李可問飯店寄送京都的費用與到達日。', items: [
+    { date: '2026-11-23', city: '東京', label: '豪德寺與新宿', title: '甜甜圈、招財貓、北歐咖啡與權八', subtitle: '表參道出發，繞一圈回到西麻布：世田谷 → 富谷 → 代代木公園 → 新宿。', hotel: 'aoyama', color: 'tokyo', route: '表參道 → 三軒茶屋 → 招財貓電車 → 豪德寺 → 富谷 → 代代木公園 → 新宿東口 → 外苑 → 六本木之丘 → 西麻布', tip: '日本勤勞感謝日（週一國定假日），Higuma 假日 10:00 開。去程改從三軒茶屋搭世田谷線，看能不能搭到招財貓電車：它的時刻表只公布三軒茶屋發車時間，每週更新，11/23 那週大約 11/20 前後公布，出門前再看一次東急官網；維修日可能不跑。回程小田急線把豪德寺和 Fuglen（代代木八幡）串成一直線，散步穿過代代木公園再去新宿。新宿逛到 17:15，艾許奶油在伊勢丹 B1 買。晚餐權八先訂位。晚上整理河口湖一晚的小行李；明天 9:00 退房，大件行李可問飯店寄送京都的費用與到達日。', items: [
       { time: '10:00', place: 'higuma', detail: '第 1 杯咖啡與現炸甜甜圈，開門就到，不怕賣完。從飯店步行約 9 分鐘。', nearby: ['omotesando-hills', 'omokado'] },
-      { time: '10:40', title: '表參道 → 豪德寺', detail: '千代田線到代代木上原轉小田急線各站停車，約 35 分鐘。', type: 'transit' },
-      { time: '11:20', place: 'gotokuji', detail: '豪德寺站步行約 10–15 分鐘。招福殿旁滿滿的白色招財貓；想買招財貓要在寺務所 15:00 前。運氣好可以在世田谷線宮の坂站（步行 5 分鐘）看到招財貓彩繪電車，東急官網每週公布運行時刻。參拜完在豪德寺商店街吃午餐（海鮮丼等小店）。', nearby: ['shoin'] },
+      { time: '10:40', title: '表參道 → 三軒茶屋 → 宮の坂（招財貓電車）', detail: '半藏門線直通田園都市線 3 站約 10 分鐘到三軒茶屋，走約 3 分鐘到世田谷線月台。看站內「本日の発車時刻表」或官網，搭招財貓電車到宮の坂約 15 分鐘，中途會經過松陰神社前。下一班招財貓電車太久的話，就先搭一般車，到宮の坂月台等它開過來拍照。全程大約 35–40 分鐘，和原本小田急線差不多。', type: 'transit' },
+      { time: '11:20', place: 'gotokuji', detail: '宮の坂站步行約 5 分鐘。招福殿旁滿滿的白色招財貓；想買招財貓要在寺務所 15:00 前。參拜完在豪德寺商店街吃午餐（海鮮丼等小店）。', nearby: ['shoin'] },
       { time: '13:00', title: '豪德寺 → 代代木八幡', detail: '小田急線各站停車直達，約 15 分鐘，再步行 3 分鐘到 Fuglen。', type: 'transit' },
       { time: '13:20', place: 'fuglen-tokyo', detail: '第 2 杯咖啡。復古北歐家具裡喝淺焙咖啡；再走 5 分鐘到神山町的八十八 Hatoya 外帶一杯抹茶。這一帶是「奧澀谷」咖啡小店區，不是澀谷站前的逛街區。', nearby: ['hatoya', 'spbs'] },
       { time: '14:00', place: 'yoyogi-park', detail: '拿著抹茶從富谷側進公園散步，往北走到原宿門，出來搭 JR 山手線到新宿只要 4 分鐘。', nearby: ['meiji-jingu'] },
@@ -202,19 +210,19 @@ window.TRIP = {
       { time: '晚餐', title: '飯店晚餐', detail: '依實際訂單餐食；訂房頁提示最晚 19:00 開始。', type: 'meal' },
       { time: '晚餐後・可選', place: 'maple', detail: '有體力再看點燈；也可以直接留在飯店休息。', optional: true }
     ] },
-    { date: '2026-11-25', city: '京都', label: '移動與茶', title: '富士晨光，接上京都的午後', subtitle: '今晚起，京都 Hyatt 連住三晚。', hotel: 'hyatt', color: 'kyoto', route: 'Sunnide → 三島 → 京都 → Hyatt → 寺町 → 三條 → 新風館 → 京都車站', tip: '建議 10:20 河口湖巴士 → 11:50 三島北口，轉新幹線至少留 60 分鐘。巴士、新幹線都尚未訂妥。市區照關門時間由北往南逛：一保堂（17:00）→ blend kyoto（18:00）→ Smart 珈琲店（19:00）→ HUMAN MADE 1928 → 新風館，晚餐回京都車站吃京ちゃばな，再搭計程車回飯店。延誤的話先跳過一保堂（11/21 青山店已經買得到茶），再跳過新風館。', items: [
+    { date: '2026-11-25', city: '京都', label: '移動與茶', title: '富士晨光，接上京都的午後', subtitle: '今晚起，京都 Hyatt 連住三晚。', hotel: 'hyatt', color: 'kyoto', route: 'Sunnide → 三島 → 京都 → Hyatt → 御所南 → 寺町 → 三條 → 新風館', tip: '建議 10:20 河口湖巴士 → 11:50 三島北口，轉新幹線至少留 60 分鐘。巴士、新幹線都尚未訂妥。市區計程車直接到最北邊的 blend kyoto，之後只往南、往西走，不走回頭路：blend kyoto（18:00 關）→ 寺町通（一保堂順路，17:00 關）→ Smart 珈琲店（19:00）→ HUMAN MADE 1928（19:00）→ 新風館（20:00），晚餐就在烏丸御池吃。京ちゃばな和 HOHO 焙茶移到 11/27 從嵐山回京都車站時。延誤的話先跳過一保堂，再跳過新風館。', items: [
       { time: '清晨', place: 'lake', detail: '先看天氣與能見度；早餐後收行李。不要為拍照錯過移動。' },
       { time: '09:30', title: '退房前往河口湖站', detail: '請櫃台幫忙叫車；預留車程與候車時間。', type: 'transit' },
       { time: '10:20 → 11:50', title: '三島・河口湖 Liner', detail: '建議巴士，河口湖站出發、三島站北口下車；先預約。', type: 'transit', pending: true, transport: 'kyoto', bookingId: 'mishima-bus' },
       { time: '約 13:00 後', title: '三島 → 京都 新幹線', detail: '尚未選定車次。部分 Hikari 可直達；其他班次需轉車，以訂票時的路線為準。', type: 'transit', pending: true, bookingId: 'shinkansen' },
-      { time: '抵達京都', place: 'hoho', detail: '外帶第一杯焙茶就好，接著搭計程車到飯店。不想多走就跳過，11/28 搭 HARUKA 前還會再經過京都車站。' },
-      { time: '約 15:30', place: 'hyatt', detail: '入住或寄放行李，稍微休息。16:00 搭計程車到寺町二條的一保堂，約 20 分鐘。' },
-      { time: '16:15', place: 'ippodo', detail: '店 17:00 關門、喫茶室 L.O. 16:30，今天以買茶葉伴手禮和外帶為主。公休日是每月第 2 個週三，11/25 是第 4 個週三，照常營業。', nearby: ['teramachi'] },
-      { time: '17:00', place: 'blend-kyoto', detail: '從一保堂沿寺町通往北，轉竹屋町通往西，步行約 7 分鐘。今天的咖啡：挑幾支單品豆組成自己的配方，或請店員推薦。18:00 關門。' },
-      { time: '17:45', place: 'smart-coffee', detail: '沿麩屋町通往南走到三條，再轉寺町通，約 12 分鐘。點招牌鬆餅或法式吐司，當下午茶也先墊墊胃。19:00 關門。' },
-      { time: '18:30', place: 'human-kyoto', detail: '出門沿三條通往西走約 3 分鐘，1928 大樓裡。19:00 關門。' },
-      { time: '19:00', place: 'shinpukan', detail: '沿三條通往西走約 10 分鐘到烏丸通。多數店開到 20:00，以官網為準。' },
-      { time: '20:00', place: 'kyo-chabana', detail: '新風館地下直通烏丸御池站，烏丸線 3 站約 6 分鐘到京都站，2 號出口步行約 2 分鐘。吃完搭計程車回 Hyatt 約 10 分鐘。今天太累的話，11/27 從嵐山回到京都車站再吃也很順路。' }
+      { time: '抵達京都', title: '京都車站 → Hyatt', detail: '出站直接搭計程車到飯店，約 10 分鐘，先把大行李放好。', type: 'transit' },
+      { time: '約 15:30', place: 'hyatt', detail: '入住或寄放行李，稍微休息。15:45 搭計程車到御所南的 blend kyoto，約 20 分鐘。' },
+      { time: '16:10', place: 'blend-kyoto', detail: '今天唯一一杯咖啡：挑幾支單品豆組成自己的配方，或請店員推薦。18:00 關門。' },
+      { time: '16:45', place: 'ippodo', optional: true, detail: '沿竹屋町通往東、轉寺町通往南，步行約 7 分鐘，就在往南的路上。17:00 關門，趕得上就進去買茶葉；11/21 已經去過青山店，來不及就直接走過。公休日是每月第 2 個週三，11/25 照常營業。', nearby: ['teramachi'] },
+      { time: '17:15', place: 'smart-coffee', detail: '沿寺町通往南走約 10 分鐘，過了御池通就是有屋頂的商店街，店在三條路口前。點招牌鬆餅或法式吐司當下午茶。19:00 關門。' },
+      { time: '18:10', place: 'human-kyoto', detail: '出門走到三條通往西約 3 分鐘，1928 大樓裡。19:00 關門。' },
+      { time: '18:50', place: 'shinpukan', detail: '沿三條通往西走約 10 分鐘到烏丸通。多數店開到 20:00，以官網為準。' },
+      { time: '20:00', title: '晚餐，然後回飯店', detail: '在新風館或烏丸御池一帶吃，吃完搭計程車回 Hyatt，約 15–20 分鐘。', type: 'meal' }
     ] },
     { date: '2026-11-26', city: '京都', label: '東山與古街', title: '紅葉、和服與清水寺的暮色', subtitle: '清水寺與嵐山分開，這一天好好走東山。', hotel: 'hyatt', color: 'kyoto', route: '東福寺 → 五條 → 清水寺 → 二三年坂 → 祇園', tip: '想穿和服就把下午留在東山，先確認租借店的歸還時間。夜間拜觀可換回便服後再去；不需要穿和服跨城趕車。', items: [
       { time: '上午', place: 'tofukuji', detail: '紅葉重點。避開拖行李與過度跨區的安排。', nearby: ['fushimi-inari'] },
@@ -230,6 +238,7 @@ window.TRIP = {
       { time: '午餐候選', place: 'hirokawa', detail: '完全預約制，午餐或晚餐以實際訂到的時段為準。', pending: true, bookingId: 'hirokawa-booking' },
       { time: '下午', place: 'togetsukyo', detail: '桂川畔散步、喝咖啡。排隊太久就換一家。' },
       { time: '下午班次・待訂', place: 'torokko', detail: '先選有票的班次，再安排回程。去亀岡後可步行到 JR 馬堀站回京都。', pending: true, bookingId: 'torokko-ticket' },
+      { time: '晚餐', place: 'kyo-chabana', detail: '小火車到亀岡後走到 JR 馬堀站，搭嵯峨野線回京都站，中央口步行約 3 分鐘。週五晚上建議先在 Hot Pepper 訂位。吃完回站內 HOHO HOJICHA 買焙茶伴手禮（營業時間出發前確認），再搭計程車回 Hyatt，約 10 分鐘。', nearby: ['hoho'] },
       { time: '晚間', title: '回京都，整理行李', detail: '回 Hyatt 休息。護照、回程機票與隔天 HARUKA 資訊放在容易拿的位置。', type: 'rest' }
     ], alternateItems: [
       { time: '上午', title: '京都 → 大阪，一日來回', detail: '搭 JR 新快速到大阪站；保留回京都的時間。今晚住宿仍是 Hyatt Regency Kyoto。', type: 'transit' },
