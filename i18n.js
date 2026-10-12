@@ -17,7 +17,7 @@ window.TRIP_UI_EN = {
   '九天八夜': '9 days, 8 nights', '11/20–24 · 4 晚': '11/20–24 · 4 nights', '11/24–25 · 1 晚': '11/24–25 · 1 night', '11/25–28 · 3 晚': '11/25–28 · 3 nights',
   '2 位成人 · 3 間已訂住宿 · 8 個夜晚': '2 adults · 3 booked hotels · 8 nights',
   '每天，都有一點期待': 'A little something, every day', '固定航班已確認，其餘時間可以跟著心情走。': 'Flights are confirmed. The rest can follow our mood.',
-  '選擇行程日期': 'Choose a day', '大阪備選': 'Osaka alternative', '大阪一日來回，晚上回京都': 'Osaka for the day, Kyoto for the night',
+  '選擇行程日期': 'Choose a day', '次選': 'Plan B', '候選': 'Option', '大阪備選': 'Osaka alternative', '大阪一日來回，晚上回京都': 'Osaka for the day, Kyoto for the night',
   '白天到大阪走走，當晚回京都 Hyatt。': 'Explore Osaka, then return to Kyoto Hyatt that evening.', '京都 → 梅田 → 道頓堀（可選）→ 京都 Hyatt': 'Kyoto → Umeda → Dotonbori (optional) → Kyoto Hyatt',
   '11/27 行程方案': 'Nov 27 itinerary options', '京都・嵐山': 'Kyoto · Arashiyama', '大阪・備選': 'Osaka · alternative',
   '時間為建議安排': 'Suggested times', '已完成': 'completed', '加入行事曆': 'Add to calendar', '前一天': 'Previous day', '下一天': 'Next day',

@@ -544,7 +544,7 @@ window.TRIP_MAP_ROUTES = {
       tab: ['移動・寺町', 'Transfer / Teramachi'],
       title: ['巴士和新幹線到京都，傍晚逛寺町', 'Bus and Shinkansen to Kyoto, then an evening on Teramachi'],
       legs: [
-        { to: 'lake', s: [{ w: 'est' }], note: ['先看天氣與能見度', 'Check the weather and visibility first'] },
+        { to: 'lake', s: [{ w: 'est' }], note: ['先吃和朝食，再看天氣與能見度', 'Japanese breakfast first, then check the weather and visibility'] },
         { to: 'hyatt', s: [{ w: 'est', to: 'sunnide' }, { taxi: 0 }, { l: 'BS', a: 'kawaguchiko', b: 'mishima', dep: '10:20', arr: '11:50' }, { l: 'SK', a: 'mishima', b: 'kyoto', dep: '約 13:00 後' }, { taxi: 10 }], note: ['巴士先預約；三島至少留 60 分鐘轉乘，新幹線車次未定', 'Book the bus; leave at least 60 minutes to change at Mishima. Shinkansen train not chosen yet'] },
         { to: 'smart-coffee', s: [{ taxi: '15–20' }] },
         { to: 'umezono-teramachi', s: [{ w: 1 }] },
