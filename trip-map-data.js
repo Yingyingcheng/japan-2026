@@ -289,12 +289,33 @@ window.TRIP_MAP_POINTS = {
     "matched": "京都府京都市下京区橋詰町１４３番地",
     "source": "https://msearch.gsi.go.jp/address-search/AddressSearch?q=%E4%BA%AC%E9%83%BD%E5%BA%9C%E4%BA%AC%E9%83%BD%E5%B8%82%E4%B8%8B%E4%BA%AC%E5%8C%BA%E6%A9%8B%E8%A9%B0%E7%94%BA143"
   },
+  "ichikawaya": {
+    "lat": 34.993179,
+    "lon": 135.774582,
+    "query": "京都府京都市東山区鐘鋳町396-2",
+    "matched": "京都府京都市東山区鐘鋳町３９６番地",
+    "source": "https://msearch.gsi.go.jp/address-search/AddressSearch?q=%E4%BA%AC%E9%83%BD%E5%BA%9C%E4%BA%AC%E9%83%BD%E5%B8%82%E6%9D%B1%E5%B1%B1%E5%8C%BA%E9%90%98%E9%8B%B3%E7%94%BA396-2"
+  },
   "kimono": {
-    "lat": 34.99654,
-    "lon": 135.78009,
-    "query": "京都府京都市東山区清水2丁目",
-    "matched": "京都府京都市東山区清水二丁目",
-    "source": "https://msearch.gsi.go.jp/address-search/AddressSearch?q=%E4%BA%AC%E9%83%BD%E5%BA%9C%E4%BA%AC%E9%83%BD%E5%B8%82%E6%9D%B1%E5%B1%B1%E5%8C%BA%E6%B8%85%E6%B0%B42%E4%B8%81%E7%9B%AE"
+    "lat": 34.994614,
+    "lon": 135.776001,
+    "query": "京都府京都市東山区遊行前町559",
+    "matched": "京都府京都市東山区遊行前町５５９番地",
+    "source": "https://msearch.gsi.go.jp/address-search/AddressSearch?q=%E4%BA%AC%E9%83%BD%E5%BA%9C%E4%BA%AC%E9%83%BD%E5%B8%82%E6%9D%B1%E5%B1%B1%E5%8C%BA%E9%81%8A%E8%A1%8C%E5%89%8D%E7%94%BA559"
+  },
+  "sumi-roman": {
+    "lat": 35.005589,
+    "lon": 135.762253,
+    "query": "京都府京都市中京区貝屋町561",
+    "matched": "京都府京都市中京区貝屋町５６１番地",
+    "source": "https://msearch.gsi.go.jp/address-search/AddressSearch?q=%E4%BA%AC%E9%83%BD%E5%BA%9C%E4%BA%AC%E9%83%BD%E5%B8%82%E4%B8%AD%E4%BA%AC%E5%8C%BA%E8%B2%9D%E5%B1%8B%E7%94%BA561"
+  },
+  "daimaru-kyoto": {
+    "lat": 35.003681,
+    "lon": 135.761841,
+    "query": "京都府京都市下京区立売西町79",
+    "matched": "京都府京都市下京区立売西町",
+    "source": "https://msearch.gsi.go.jp/address-search/AddressSearch?q=%E4%BA%AC%E9%83%BD%E5%BA%9C%E4%BA%AC%E9%83%BD%E5%B8%82%E4%B8%8B%E4%BA%AC%E5%8C%BA%E7%AB%8B%E5%A3%B2%E8%A5%BF%E7%94%BA79"
   },
   "kiyomizu": {
     "lat": 34.99588,
@@ -351,6 +372,20 @@ window.TRIP_MAP_POINTS = {
     "query": "京都府京都市中京区笹屋町447",
     "matched": "京都府京都市中京区笹屋町４４７番地",
     "source": "https://msearch.gsi.go.jp/address-search/AddressSearch?q=%E4%BA%AC%E9%83%BD%E5%BA%9C%E4%BA%AC%E9%83%BD%E5%B8%82%E4%B8%AD%E4%BA%AC%E5%8C%BA%E7%AC%B9%E5%B1%8B%E7%94%BA447"
+  },
+  "flip-up": {
+    "lat": 35.0110,
+    "lon": 135.7615,
+    "query": "京都府京都市中京区押小路通室町東入蛸薬師町292-2（烏丸御池駅徒歩約4分・近傍座標）",
+    "matched": "烏丸御池・押小路室町近傍（店址精確點位待現場確認）",
+    "source": "https://tabelog.com/kyoto/A2601/A260202/26004579/"
+  },
+  "yugen": {
+    "lat": 35.016113,
+    "lon": 135.758575,
+    "query": "京都府京都市中京区亀屋町146",
+    "matched": "京都府京都市中京区亀屋町１４６番地",
+    "source": "https://msearch.gsi.go.jp/address-search/AddressSearch?q=%E4%BA%AC%E9%83%BD%E5%BA%9C%E4%BA%AC%E9%83%BD%E5%B8%82%E4%B8%AD%E4%BA%AC%E5%8C%BA%E4%BA%80%E5%B1%8B%E7%94%BA146"
   },
   "okuniya-mambei": {
     "lat": 35.005508,
@@ -455,14 +490,14 @@ window.TRIP_MAP_ROUTES = {
     { id: 'momiji', city: 'kawaguchiko', name: ['紅葉迴廊', 'Maple corridor'], places: ['maple'] },
     { id: 'kyoto-station', city: 'kyoto', name: ['京都車站', 'Kyoto Station'], places: ['hoho', 'kyo-chabana'] },
     { id: 'gojo', city: 'kyoto', name: ['五條', 'Gojo'], places: ['lorimer'] },
-    { id: 'higashiyama', city: 'kyoto', name: ['東山・清水寺', 'Higashiyama / Kiyomizu'], short: ['清水寺', 'Kiyomizu'], places: ['kimono', 'kiyomizu'] },
+    { id: 'higashiyama', city: 'kyoto', name: ['東山・清水寺', 'Higashiyama / Kiyomizu'], short: ['清水寺', 'Kiyomizu'], places: ['ichikawaya', 'kimono', 'kiyomizu'] },
     { id: 'tofukuji', city: 'kyoto', name: ['東福寺', 'Tofukuji'], places: ['tofukuji'] },
     { id: 'fushimi', city: 'kyoto', name: ['伏見稻荷', 'Fushimi Inari'], places: ['fushimi-inari'] },
     { id: 'uji', city: 'kyoto', name: ['宇治', 'Uji'], places: ['byodoin', 'tokichi-uji'] },
     { id: 'okazaki', city: 'kyoto', name: ['永觀堂・南禪寺', 'Eikando / Nanzenji'], short: ['永觀堂', 'Eikando'], places: ['eikando'] },
     { id: 'teramachi', city: 'kyoto', name: ['寺町・河原町', 'Teramachi / Kawaramachi'], short: ['寺町', 'Teramachi'], places: ['smart-coffee', 'umezono-teramachi', 'teramachi', 'ippodo'] },
-    { id: 'oike', city: 'kyoto', name: ['御所南・烏丸御池', 'Gosho-minami / Karasuma Oike'], short: ['烏丸御池', 'Karasuma Oike'], places: ['blend-kyoto', 'marukyu-nishinotoin'] },
-    { id: 'shijo-karasuma', city: 'kyoto', name: ['四條烏丸・錦', 'Shijo-Karasuma / Nishiki'], short: ['四條烏丸', 'Shijo-Karasuma'], places: ['okuniya-mambei'] }
+    { id: 'oike', city: 'kyoto', name: ['御所南・烏丸御池', 'Gosho-minami / Karasuma Oike'], short: ['烏丸御池', 'Karasuma Oike'], places: ['blend-kyoto', 'flip-up', 'yugen', 'marukyu-nishinotoin'] },
+    { id: 'shijo-karasuma', city: 'kyoto', name: ['四條烏丸・錦', 'Shijo-Karasuma / Nishiki'], short: ['四條烏丸', 'Shijo-Karasuma'], places: ['okuniya-mambei', 'daimaru-kyoto', 'sumi-roman'] }
   ],
   days: {
     '2026-11-20': {
@@ -558,26 +593,31 @@ window.TRIP_MAP_ROUTES = {
       tab: ['和服・宇治', 'Kimono / Uji'],
       title: ['東山穿和服，一路往南到伏見和宇治', 'Kimono in Higashiyama, then south to Fushimi and Uji'],
       legs: [
-        { to: 'lorimer', s: [{ taxi: 10 }] },
-        { to: 'kimono', s: [{ taxi: 10 }] },
+        { to: 'ichikawaya', s: [{ w: '10–15' }], alt: ['或短程計程車', 'Or a short taxi'] },
+        { to: 'kimono', s: [{ taxi: '5–10' }] },
         { to: 'kiyomizu', s: [{ w: 'est' }], note: ['穿和服走二年坂、三年坂上去', 'Walk up Ninenzaka and Sannenzaka in kimono'] },
         { to: 'tofukuji', s: [{ taxi: '10–15' }] },
         { to: 'fushimi-inari', s: [{ w: 0 }, { l: 'D', a: 'tofukuji-station', b: 'inari', n: 1 }] },
         { to: 'byodoin', s: [{ l: 'D', a: 'inari', b: 'uji', m: 20 }, { w: 10 }], note: ['先到中村藤吉抽整理券', 'Get a ticket at Nakamura Tokichi first'] },
         { to: 'tokichi-uji', s: [{ w: 'est' }], note: ['叫號後回來', 'Come back when called'] },
-        { to: 'eikando', s: [{ w: 0 }, { l: 'D', a: 'uji', b: 'kyoto', m: 17 }, { taxi: 15, to: 'kimono' }, { taxi: '15–20' }], note: ['先回和服店還衣服；選了隔天還的店就直接去永觀堂', 'Return the kimono first; if the shop allows next-day return, go straight to Eikando'] },
-        { to: 'hyatt', s: [{ taxi: 0, to: 'gion' }, { taxi: 15 }], note: ['祇園一帶吃晚餐，飯後沿白川走走', 'Dinner around Gion, then a walk along the Shirakawa'] }
+        { to: 'kimono', s: [{ w: 0 }, { l: 'D', a: 'uji', b: 'kyoto', m: 17 }, { taxi: 15 }], note: ['約 17:00 前還和服', 'Return the kimono by about 17:00'] },
+        { to: 'daimaru-kyoto', s: [{ taxi: 15 }], note: ['茅乃舎在 B1', 'Kayanoya is on B1'] },
+        { to: 'sumi-roman', s: [{ w: 5 }], note: ['先吃晚餐再去永觀堂', 'Dinner first, then Eikando'] },
+        { to: 'eikando', s: [{ taxi: '20–25' }], note: ['受付到 20:30，21:00 閉門', 'Entry until 20:30; closes 21:00'] },
+        { to: 'hyatt', s: [{ taxi: '15–20' }] }
       ]
     },
     '2026-11-27': {
-      tab: ['茶舖・市區', 'Tea / downtown'],
-      title: ['在市中心走路：茶舖、咖啡、鰻魚飯', 'A walking day downtown: tea, coffee and eel'],
+      tab: ['茶舖・大阪', 'Tea / Osaka'],
+      title: ['早上御所南短逛，午餐後去大阪', 'A short Gosho-minami morning, then Osaka after lunch'],
       legs: [
-        { to: 'ippodo', s: [{ taxi: 20 }] },
-        { to: 'blend-kyoto', s: [{ w: 7 }] },
-        { to: 'okuniya-mambei', s: [{ w: 20 }], note: ['沿麩屋町通、堺町通慢慢往南', 'Stroll south along Fuyacho-dori and Sakaimachi-dori'] },
-        { to: 'marukyu-nishinotoin', s: [{ w: '20–25' }], note: ['沿室町通、新町通往北，穿過山鉾町', 'North along Muromachi-dori and Shinmachi-dori, through the Gion Matsuri streets'] },
-        { to: 'hyatt', s: [{ taxi: 0 }], note: ['先自由時間：三条会商店街，或京都御苑、出町桝形和鴨川三角洲', 'Free time first: Sanjokai shopping street, or the Imperial Palace park, Demachi Masugata and the Kamo delta'] }
+        { to: 'blend-kyoto', s: [{ taxi: '15–20' }], note: ['10:00 開門，不久留', 'Opens 10:00; short stop'] },
+        { to: 'ippodo', s: [{ w: 7 }] },
+        { to: 'flip-up', s: [{ w: 'est' }], note: ['買麵包外帶', 'Takeaway bread'] },
+        { to: 'yugen', s: [{ w: 'est' }], note: ['11:00 開門', 'Opens 11:00'] },
+        { to: 'marukyu-nishinotoin', s: [{ w: 'est' }], note: ['午餐前短坐抹茶', 'Short matcha before lunch'] },
+        { to: 'okuniya-mambei', s: [{ w: 'est' }], note: ['12:30 預約', '12:30 reservation'] },
+        { to: 'hoho', s: [{ taxi: 0 }], note: ['往京都站轉 JR 去大阪；晚上回 Hyatt', 'To Kyoto Station for JR to Osaka; back to Hyatt at night'] }
       ]
     },
     '2026-11-28': {
