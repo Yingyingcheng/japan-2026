@@ -1,6 +1,6 @@
 # 秋日日本 · 2026
 
-Trip companion for November 20–28, 2026. Published at https://yingyingcheng.github.io/japan-2026/.
+Trip companion for November 20–28, 2026.
 
 The latest confirmed hotels and flight screenshots are authoritative. The older itinerary is a wish list; trains, restaurant reservations, and experiences are suggestions until the travelers book them.
 
