@@ -569,7 +569,7 @@ window.TRIP_MAP_ROUTES = {
       tab: ['富士山・溫泉', 'Fuji / onsen'],
       title: ['坐富士回遊到河口湖，下午留給湖畔', 'Fuji Excursion to the lake; the afternoon is for the shore'],
       legs: [
-        { to: 'oishi', s: [{ taxi: 0 }, { l: 'FX', a: 'shinjuku', b: 'kawaguchiko', dep: '10:30', arr: '12:24' }, { taxi: '15–20', to: 'sunnide' }, { w: 'est' }], note: ['富士回遊 15 號是建議班次，尚未訂票。河口湖站附近吃午餐，再搭計程車到飯店寄放行李', 'Fuji Excursion 15 is the suggested train, not booked yet. Lunch near Kawaguchiko Station, then a taxi to the hotel to drop the bags'] },
+        { to: 'oishi', s: [{ taxi: 0 }, { l: 'FX', a: 'shinjuku', b: 'kawaguchiko', dep: '11:34', arr: '13:31' }, { taxi: '15–20', to: 'sunnide' }, { w: 'est' }], note: ['富士回遊 93 號已訂妥（5 號車），午餐在新宿站買便當上車吃。到河口湖站直接搭計程車到飯店寄放行李，走去大石公園', 'Fuji Excursion 93 is booked (car 5); lunch is a bento from Shinjuku Station, eaten on the train. From Kawaguchiko Station, take a taxi to the hotel to drop the bags and walk to Oishi Park'] },
         { to: 'sunnide', s: [{ w: 'est' }] },
         { to: 'maple', s: [] },
         { to: 'sunnide', s: [] }
@@ -580,7 +580,7 @@ window.TRIP_MAP_ROUTES = {
       title: ['巴士和新幹線到京都，傍晚逛寺町', 'Bus and Shinkansen to Kyoto, then an evening on Teramachi'],
       legs: [
         { to: 'lake', s: [{ w: 'est' }], note: ['先吃和朝食，再看天氣與能見度', 'Japanese breakfast first, then check the weather and visibility'] },
-        { to: 'hyatt', s: [{ w: 'est', to: 'sunnide' }, { taxi: 0 }, { l: 'BS', a: 'kawaguchiko', b: 'mishima', dep: '10:20', arr: '11:50' }, { l: 'SK', a: 'mishima', b: 'kyoto', dep: '約 13:00 後' }, { taxi: 10 }], note: ['巴士先預約；三島至少留 60 分鐘轉乘，新幹線車次未定', 'Book the bus; leave at least 60 minutes to change at Mishima. Shinkansen train not chosen yet'] },
+        { to: 'hyatt', s: [{ w: 'est', to: 'sunnide' }, { taxi: 0 }, { l: 'BS', a: 'kawaguchiko', b: 'mishima', dep: '11:20', arr: '12:50' }, { l: 'SK', a: 'mishima', b: 'kyoto', dep: '13:46', arr: '15:37' }, { taxi: 10 }], note: ['巴士 11:20 已訂，新幹線 13:46 ひかり 713 已訂（13 號車），延誤改 13:55 こだま 827', 'Bus 11:20 booked; Shinkansen Hikari 713 at 13:46 booked (car 13); if late, Kodama 827 at 13:55'] },
         { to: 'smart-coffee', s: [{ taxi: '15–20' }] },
         { to: 'umezono-teramachi', s: [{ w: 1 }] },
         { to: 'teramachi', s: [{ w: 'est' }], note: ['安靜的往北，熱鬧的往南；天黑後到先斗町', 'Quieter streets to the north, busier arcades to the south; Pontocho after dark'] },
