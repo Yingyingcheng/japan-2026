@@ -163,6 +163,13 @@ window.TRIP_MAP_POINTS = {
     "matched": "東京都港区西麻布一丁目１３番",
     "source": "https://msearch.gsi.go.jp/address-search/AddressSearch?q=%E6%9D%B1%E4%BA%AC%E9%83%BD%E6%B8%AF%E5%8C%BA%E8%A5%BF%E9%BA%BB%E5%B8%831-13-11"
   },
+  "meat-man": {
+    "lat": 35.664017,
+    "lon": 139.733261,
+    "query": "東京都港区六本木4-8-8",
+    "matched": "東京都港区六本木四丁目８番",
+    "source": "https://msearch.gsi.go.jp/address-search/AddressSearch?q=%E6%9D%B1%E4%BA%AC%E9%83%BD%E6%B8%AF%E5%8C%BA%E5%85%AD%E6%9C%AC%E6%9C%A84-8-8"
+  },
   "yoyogi-park": {
     "lat": 35.66917,
     "lon": 139.70166,
@@ -477,7 +484,7 @@ window.TRIP_MAP_ROUTES = {
     { id: 'gaien', city: 'tokyo', name: ['外苑', 'Gaien'], places: ['ginkgo', 'hm-cafe'] },
     { id: 'omotesando', city: 'tokyo', name: ['表參道・南青山', 'Omotesando / Minami-Aoyama'], short: ['表參道', 'Omotesando'], places: ['mameya', 'nezu', 'ippodo-aoyama', 'gentle-monster', 'higuma', 'afuri', 'yoroniku'] },
     { id: 'harajuku', city: 'tokyo', name: ['原宿・貓街', 'Harajuku'], places: ['human-tokyo'] },
-    { id: 'roppongi', city: 'tokyo', name: ['六本木・西麻布', 'Roppongi'], places: ['roppongi-hills', 'gonpachi'] },
+    { id: 'roppongi', city: 'tokyo', name: ['六本木・西麻布', 'Roppongi'], places: ['roppongi-hills', 'meat-man', 'gonpachi'] },
     { id: 'tomigaya', city: 'tokyo', name: ['富谷・代代木公園', 'Tomigaya / Yoyogi'], places: ['fuglen-tokyo', 'yoyogi-park'] },
     { id: 'gyoen', city: 'tokyo', name: ['新宿御苑・代々木', 'Shinjuku Gyoen / Yoyogi'], short: ['新宿御苑', 'Shinjuku Gyoen'], places: ['gyoen', 'tanbo'] },
     { id: 'azabudai', city: 'tokyo', name: ['麻布台', 'Azabudai'], places: ['ogawa-azabudai', 'teamlab'] },
@@ -561,8 +568,8 @@ window.TRIP_MAP_ROUTES = {
         { to: 'echire-isetan', s: [{ w: 'est' }] },
         { to: 'ginkgo', s: [{ l: 'JB', a: 'shinjuku', b: 'shinanomachi', m: 6, n: 3 }, { w: 7 }] },
         { to: 'roppongi-hills', s: [{ w: 0 }, { l: 'G', a: 'gaiemmae', b: 'aoyama-itchome', n: 1 }, { l: 'E', a: 'aoyama-itchome', b: 'roppongi', n: 2 }, { w: 5 }], t: '20' },
-        { to: 'gonpachi', s: [{ w: 10 }] },
-        { to: 'aoyama', s: [{ l: 'E', a: 'roppongi', b: 'aoyama-itchome', n: 2 }, { l: 'G', a: 'aoyama-itchome', b: 'gaiemmae', n: 1 }] }
+        { to: 'meat-man', s: [{ w: 8 }], note: ['19:00 已訂', 'Booked for 19:00'] },
+        { to: 'aoyama', s: [{ w: 'est' }, { l: 'E', a: 'roppongi', b: 'aoyama-itchome', n: 2 }, { l: 'G', a: 'aoyama-itchome', b: 'gaiemmae', n: 1 }] }
       ]
     },
     '2026-11-24': {
