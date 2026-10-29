@@ -79,7 +79,7 @@
   }
   function applyHash() {
     const [view, date] = location.hash.slice(1).split('/');
-    activeView = ['plan', 'stays', 'transit', 'places', 'prepare', 'map'].includes(view) ? view : 'plan';
+    activeView = ['plan', 'stays', 'transit', 'places', 'prepare', 'costs', 'map'].includes(view) ? view : 'plan';
     if (date && trip.days.some(d => d.date === date)) selectedDate = date;
     render();
     window.scrollTo({ top: 0, behavior: 'instant' });
@@ -93,9 +93,9 @@
       a.classList.toggle('active', active);
       if (active) a.setAttribute('aria-current', 'page'); else a.removeAttribute('aria-current');
     });
-    const titles = { plan: '每日行程', stays: '住宿', transit: '航班與交通', places: '口袋清單', prepare: '出發準備', map: '旅程地圖' };
+    const titles = { plan: '每日行程', stays: '住宿', transit: '航班與交通', places: '口袋清單', prepare: '出發準備', costs: '旅費明細', map: '旅程地圖' };
     document.title = `${t(titles[activeView])} · ${trip.title} 2026`;
-    main.innerHTML = html`<div class="page">${({ plan: renderPlan, stays: renderStays, transit: renderTransit, places: renderPlaces, prepare: renderPrepare, map: () => '<section id="trip-map-root"></section>' })[activeView]()}</div>`;
+    main.innerHTML = html`<div class="page">${({ plan: renderPlan, stays: renderStays, transit: renderTransit, places: renderPlaces, prepare: renderPrepare, costs: renderCosts, map: () => '<section id="trip-map-root"></section>' })[activeView]()}</div>`;
     if (activeView === 'map') window.TripMap.mount(document.getElementById('trip-map-root'), { language, trip, initialDate: location.hash.slice(1).split('/')[1] });
     if (activeView === 'plan') {
       document.getElementById('day-note').value = state.notes[selectedDate] || '';
@@ -165,9 +165,11 @@
   function renderFlight(f) {
     return html`<article class="flight-card"><div class="flight-top"><span>${dateLabel(f.date)}（${weekday(f.date)}） · ${t(f.id === 'outbound' ? '去程' : '回程')}</span><strong>Jetstar Japan · ${f.number}</strong><span class="pill confirmed">已確認</span></div><div class="flight-route"><div class="flight-stop"><div class="airport-code">${f.from}</div><div class="flight-time">${f.departure}</div><small>${f.fromName}</small><small>${f.fromTerminal}</small></div><div class="flight-connector">${icon('plane')}<small>${f.duration}</small></div><div class="flight-stop"><div class="airport-code">${f.to}</div><div class="flight-time">${f.arrival}</div><small>${f.toName}</small><small>${f.toTerminal}</small></div></div></article>`;
   }
+  const priceLine = price => price ? html`<p class="price-line">${icon('yen')}<span>${price}</span></p>` : '';
+
   function renderTransportCard(t) {
     const destination = t.destination ? placeById.get(t.destination) : { ja: t.destinationQuery, city: '', category: '住宿' };
-    return html`<article class="transport-card" id="transport-${t.id}"><div class="transport-top"><div class="transport-symbol">${icon(t.icon)}</div><div><span class="eyebrow">${t.date} · ON THE WAY</span><h2>${t.title}</h2><p>${t.subtitle}</p></div></div><p>${t.summary}</p><ol class="transport-steps">${t.steps.map(s => html`<li>${s}</li>`).join('')}</ol>${t.image ? html`<a class="transport-map" href="assets/${t.image}" target="_blank" rel="noopener"><img src="assets/${t.image}" alt="${t.imageAlt}" width="1024" height="484" loading="lazy"></a>` : ''}${prose(t.note, 'transport-note')}<div class="transport-links">${ext(t.link, (t.linkLabel || '官方資訊／購票') + ' ' + icon('external'), 'button compact')}${ext(directions(destination, t.origin), icon('map') + '查看路線', 'button secondary compact')}${t.source ? ext(t.source, '資料來源') : ''}</div></article>`;
+    return html`<article class="transport-card" id="transport-${t.id}"><div class="transport-top"><div class="transport-symbol">${icon(t.icon)}</div><div><span class="eyebrow">${t.date} · ON THE WAY</span><h2>${t.title}</h2><p>${t.subtitle}</p></div></div><p>${t.summary}</p>${priceLine(t.price)}<ol class="transport-steps">${t.steps.map(s => html`<li>${s}</li>`).join('')}</ol>${t.image ? html`<a class="transport-map" href="assets/${t.image}" target="_blank" rel="noopener"><img src="assets/${t.image}" alt="${t.imageAlt}" width="1024" height="484" loading="lazy"></a>` : ''}${prose(t.note, 'transport-note')}<div class="transport-links">${ext(t.link, (t.linkLabel || '官方資訊／購票') + ' ' + icon('external'), 'button compact')}${ext(directions(destination, t.origin), icon('map') + '查看路線', 'button secondary compact')}${t.source ? ext(t.source, '資料來源') : ''}</div></article>`;
   }
   function renderTransit() {
     return html`${pageHeading('FROM TAKEOFF TO THE LAST TRAIN', '每一段路，都先想好。', '航班時間以你提供的確認圖為準，顯示出發與抵達地當地時間。列車／巴士是建議安排，尚未訂妥。', html`<button class="button secondary" data-action="calendar-flights">${icon('calendar')}下載航班行事曆</button>`)}<div class="flight-grid">${trip.flights.map(renderFlight).join('')}</div><div class="section-heading"><div><h2>五段重要的移動</h2><p>帶行李的日子少轉乘；11/27 大阪一日來回不帶大件。</p></div></div><div class="transport-grid">${trip.transport.map(renderTransportCard).join('')}</div><div class="gentle-note">所有交通時間皆需在購票與出發前再核對。地圖連結讓你自行查當下路線；地圖建議的車次不代表已經訂票。11/25 新幹線先依巴士抵達時間留緩衝，再選停靠三島的班次。</div>`;
@@ -204,7 +206,7 @@
   }
   function renderPrepare() {
     const done = state.packing.filter(x => trip.packing[Number(x)]).length;
-    return html`${pageHeading('A LITTLE PREPARATION, A BETTER TRIP', '出發之前，安心一點。', '住宿與航班已確認。把待訂交通、餐廳與行李清單一項項處理，出發後就可以放心玩。')}<div class="prepare-layout"><div><div class="section-heading"><div><h2>待安排與預約</h2><p>標記「已訂妥」只記錄你的進度，仍需自行在官網完成預約。</p></div></div><div class="booking-list">${trip.bookings.map(b => html`<article class="booking-card"><div class="booking-card-top"><div><h3>${b.name}</h3><span class="booking-when">${b.when}</span></div>${b.booked ? html`<span class="booking-check checked">${icon('check')}${t('已訂妥')}</span>` : html`<button class="booking-check ${checked('booked', b.id) ? 'checked' : ''}" data-action="booked" data-id="${b.id}" aria-pressed="${checked('booked', b.id)}" aria-label="${esc(b.name)} ${t(checked('booked', b.id) ? '已標記訂妥，按一下取消' : '標記已訂妥')}">${icon(checked('booked', b.id) ? 'check' : 'calendar')}${t(checked('booked', b.id) ? '已訂妥' : '待安排')}</button>`}</div>${prose(b.description)}${releaseTimes(b)}<div class="booking-links">${ext(b.url, '前往官方預約／資訊 ' + icon('external'))}${b.release ? html`<button class="text-button" data-action="calendar-release" data-id="${b.id}">${icon('calendar')}下載開賣提醒</button>` : ''}${b.source ? ext(b.source, '售票規則') : ''}</div></article>`).join('')}</div><div class="utility-card"><h3>旅程與備註，帶著走</h3><p>可下載全部行程到行事曆，或匯出這台裝置的備註、收藏與勾選進度給另一支手機匯入。備份檔請自行保管；不會傳到網站。</p><div class="utility-actions"><button class="button compact" data-action="calendar-all">${icon('calendar')}下載完整行事曆</button><button class="button secondary compact" data-action="print">列印旅程</button><button class="button secondary compact" data-action="export">${icon('download')}匯出備份</button><button class="button secondary compact" data-action="import">匯入備份</button><input id="import-file" type="file" accept="application/json,.json" hidden aria-label="選擇旅程備份檔"></div></div></div><aside class="prepare-sidebar"><div class="packing-card"><h2>出發清單</h2><p id="packing-count">${done} / ${trip.packing.length} 已準備</p><div class="progress-track"><div class="progress-fill" id="packing-progress" style="width:${done / trip.packing.length * 100}%"></div></div><ul class="packing-list">${trip.packing.map((item, i) => html`<li><label class="${checked('packing', String(i)) ? 'checked' : ''}"><input type="checkbox" data-packing="${i}" ${checked('packing', String(i)) ? 'checked' : ''}><span>${item}</span></label></li>`).join('')}</ul></div><div class="install-box"><h3>把它放在 iPhone 主畫面</h3><p>Safari 開啟網站 → 分享 → <strong>加入主畫面</strong>。<br>先連網開啟一次，看到「已可離線查看」後，就能離線讀行程與地址卡。地圖、預約、電話仍需網路。</p><p id="cache-status" style="margin-top:9px">正在確認離線儲存……</p></div><div><div class="section-heading"><div><h2>常用連結</h2></div></div><div class="resource-list">${trip.resources.map(r => ext(r.url, html`<span><strong>${r.name}</strong><small>${r.detail}</small></span>${icon('external')}`, 'resource-link')).join('')}</div></div></aside></div>`;
+    return html`${pageHeading('A LITTLE PREPARATION, A BETTER TRIP', '出發之前，安心一點。', '住宿與航班已確認。把待訂交通、餐廳與行李清單一項項處理，出發後就可以放心玩。')}<div class="prepare-layout"><div><div class="section-heading"><div><h2>待安排與預約</h2><p>標記「已訂妥」只記錄你的進度，仍需自行在官網完成預約。</p></div></div><div class="booking-list">${trip.bookings.map(b => html`<article class="booking-card"><div class="booking-card-top"><div><h3>${b.name}</h3><span class="booking-when">${b.when}</span></div>${b.booked ? html`<span class="booking-check checked">${icon('check')}${t('已訂妥')}</span>` : html`<button class="booking-check ${checked('booked', b.id) ? 'checked' : ''}" data-action="booked" data-id="${b.id}" aria-pressed="${checked('booked', b.id)}" aria-label="${esc(b.name)} ${t(checked('booked', b.id) ? '已標記訂妥，按一下取消' : '標記已訂妥')}">${icon(checked('booked', b.id) ? 'check' : 'calendar')}${t(checked('booked', b.id) ? '已訂妥' : '待安排')}</button>`}</div>${priceLine(b.price)}${prose(b.description)}${releaseTimes(b)}<div class="booking-links">${ext(b.url, '前往官方預約／資訊 ' + icon('external'))}${b.release ? html`<button class="text-button" data-action="calendar-release" data-id="${b.id}">${icon('calendar')}下載開賣提醒</button>` : ''}${b.source ? ext(b.source, '售票規則') : ''}</div></article>`).join('')}</div><div class="utility-card"><h3>旅程與備註，帶著走</h3><p>可下載全部行程到行事曆，或匯出這台裝置的備註、收藏與勾選進度給另一支手機匯入。備份檔請自行保管；不會傳到網站。</p><div class="utility-actions"><button class="button compact" data-action="calendar-all">${icon('calendar')}下載完整行事曆</button><button class="button secondary compact" data-action="print">列印旅程</button><button class="button secondary compact" data-action="export">${icon('download')}匯出備份</button><button class="button secondary compact" data-action="import">匯入備份</button><input id="import-file" type="file" accept="application/json,.json" hidden aria-label="選擇旅程備份檔"></div></div></div><aside class="prepare-sidebar"><div class="packing-card"><h2>出發清單</h2><p id="packing-count">${done} / ${trip.packing.length} 已準備</p><div class="progress-track"><div class="progress-fill" id="packing-progress" style="width:${done / trip.packing.length * 100}%"></div></div><ul class="packing-list">${trip.packing.map((item, i) => html`<li><label class="${checked('packing', String(i)) ? 'checked' : ''}"><input type="checkbox" data-packing="${i}" ${checked('packing', String(i)) ? 'checked' : ''}><span>${item}</span></label></li>`).join('')}</ul></div><div class="install-box"><h3>把它放在 iPhone 主畫面</h3><p>Safari 開啟網站 → 分享 → <strong>加入主畫面</strong>。<br>先連網開啟一次，看到「已可離線查看」後，就能離線讀行程與地址卡。地圖、預約、電話仍需網路。</p><p id="cache-status" style="margin-top:9px">正在確認離線儲存……</p></div><div><div class="section-heading"><div><h2>常用連結</h2></div></div><div class="resource-list">${trip.resources.map(r => ext(r.url, html`<span><strong>${r.name}</strong><small>${r.detail}</small></span>${icon('external')}`, 'resource-link')).join('')}</div></div></aside></div>`;
   }
   function openDialog(html) {
     document.getElementById('dialog-content').innerHTML = html;
@@ -215,7 +217,7 @@
     dialogContext = { kind: 'place', id };
     const p = placeById.get(id);
     if (!p) return;
-    openDialog(html`<div class="dialog-body"><div class="dialog-top"><span class="eyebrow">${t(p.city)} · ${p.area} · ${t(p.category)}</span>${closeButton()}</div><h2 id="dialog-title">${p.name}</h2><p class="dialog-ja" lang="ja">${p.ja}</p><p class="dialog-description">${p.description}</p>${p.address ? html`<div class="detail-row">${icon('pin')}<span lang="ja">${p.address}</span></div>` : ''}${p.hours ? html`<div class="detail-row">${icon('clock')}<span>${p.hours}<br><small>營業時間核對於 ${trip.updated}，出發前再確認。</small></span></div>` : ''}${p.phone ? html`<div class="detail-row">${icon('phone')}<a href="tel:${p.phone}">${p.phone}</a></div>` : ''}${p.note ? html`<div class="dialog-note">${p.note}</div>` : ''}<div class="dialog-actions">${ext(directions(p), icon('arrow') + '導航前往', 'button')}${ext(maps(p), icon('map') + 'Google Maps', 'button secondary')}${p.address ? html`<button class="button secondary" data-action="copy-address" data-id="${p.id}">${icon('copy')}複製地址</button>` : ''}${p.category === '住宿' ? html`<button class="button secondary" data-action="taxi" data-id="${p.id}">日文地址卡</button>` : ''}${favoriteButton(p)}</div>${p.booking ? html`<div class="dialog-actions">${ext(p.booking, icon('calendar') + '官方預約資訊', 'button secondary')}</div>` : ''}<div class="dialog-source">${p.source ? ext(p.source, '店家／官方資料 ' + icon('external'), '') : t('<span>原行程候選地點，出發前請確認分店與營業狀態。</span>')}${p.secondSource ? ext(p.secondSource, '2026 年營運公告', '') : ''}</div></div>`);
+    openDialog(html`<div class="dialog-body"><div class="dialog-top"><span class="eyebrow">${t(p.city)} · ${p.area} · ${t(p.category)}</span>${closeButton()}</div><h2 id="dialog-title">${p.name}</h2><p class="dialog-ja" lang="ja">${p.ja}</p><p class="dialog-description">${p.description}</p>${p.address ? html`<div class="detail-row">${icon('pin')}<span lang="ja">${p.address}</span></div>` : ''}${p.hours ? html`<div class="detail-row">${icon('clock')}<span>${p.hours}<br><small>營業時間核對於 ${trip.updated}，出發前再確認。</small></span></div>` : ''}${p.price ? html`<div class="detail-row">${icon('yen')}<span>${p.price}</span></div>` : ''}${p.phone ? html`<div class="detail-row">${icon('phone')}<a href="tel:${p.phone}">${p.phone}</a></div>` : ''}${p.note ? html`<div class="dialog-note">${p.note}</div>` : ''}<div class="dialog-actions">${ext(directions(p), icon('arrow') + '導航前往', 'button')}${ext(maps(p), icon('map') + 'Google Maps', 'button secondary')}${p.address ? html`<button class="button secondary" data-action="copy-address" data-id="${p.id}">${icon('copy')}複製地址</button>` : ''}${p.category === '住宿' ? html`<button class="button secondary" data-action="taxi" data-id="${p.id}">日文地址卡</button>` : ''}${favoriteButton(p)}</div>${p.booking ? html`<div class="dialog-actions">${ext(p.booking, icon('calendar') + '官方預約資訊', 'button secondary')}</div>` : ''}<div class="dialog-source">${p.source ? ext(p.source, '店家／官方資料 ' + icon('external'), '') : t('<span>原行程候選地點，出發前請確認分店與營業狀態。</span>')}${p.secondSource ? ext(p.secondSource, '2026 年營運公告', '') : ''}</div></div>`);
   }
   function showTaxi(id) {
     dialogContext = { kind: 'taxi', id };
@@ -226,6 +228,28 @@
   function showSources() {
     dialogContext = { kind: 'sources' };
     openDialog(html`<div class="dialog-body"><div class="dialog-top"><span class="eyebrow">ABOUT OUR TRIP</span>${closeButton()}</div><h2 id="dialog-title">資料與使用說明</h2><p class="dialog-description">這份旅程以你最新確認的航班、飯店與兩個地圖連結為準。原本的 Japan.pages 僅作為想去地點清單；住宿日期與回程已重新安排。</p><ul class="dialog-confirmed-list"><li>11/20–24：東急 STAY 青山 Premier · 4 晚</li><li>11/24–25：Sunnide Resort · 1 晚</li><li>11/25–28：Hyatt Regency Kyoto · 3 晚</li><li>GK14：11/20 桃園 12:50 → 成田 16:55</li><li>11/20：成田 → 青山 接送車（Booking.com · Carzen+）</li><li>GK55：11/28 關西 14:55 → 桃園 17:15</li></ul><p class="dialog-small">航班時間顯示出發／抵達地當地時間。其他行程時間為建議安排，列車、餐廳與體驗尚未訂妥；請以自己的確認信為準。店家、時刻與活動資料核對於 ${trip.updated}，各卡片附官方來源。地圖與官方頁面可查最新變動。</p><p class="dialog-small">備註、收藏、完成進度只保存在目前瀏覽器，兩支手機不會自動同步。可在「準備」匯出與匯入備份。清除瀏覽器資料可能移除這些紀錄。離線模式保留本站內容，外部服務仍需網路。</p><div class="source-grid">${trip.resources.slice(3).map(r => ext(r.url, html`<span><strong>${r.name}</strong><small>${r.detail}</small></span>${icon('external')}`, 'resource-link')).join('')}</div></div>`);
+  }
+  const rateKey = 'autumn-japan-2026-usd-rate';
+  let usdRate = trip.usdRate;
+  try { const saved = Number(localStorage.getItem(rateKey)); if (saved >= 50 && saved <= 400) usdRate = saved; } catch {}
+  const expenseGroups = [['paid', '已付款', '已刷卡或線上付清'], ['due', '當天付', '已訂位或價格固定，到現場付'], ['planned', '計畫中', '還沒訂，先抓預算']];
+  const yen = n => '¥' + Math.round(n).toLocaleString('en-US');
+  const usd = n => 'US$' + Math.round(n / usdRate).toLocaleString('en-US');
+  const amountRange = ([low, high], format) => format(low) === format(high) ? format(low) : format(low) + '–' + format(high).replace(/^(¥|US\$)/, '');
+  const expenseYen = e => e.usd ? [e.usd * usdRate, e.usd * usdRate] : Array.isArray(e.jpy) ? e.jpy : e.jpy ? [e.jpy, e.jpy] : null;
+  const expenseSum = list => list.reduce((sum, e) => { const r = expenseYen(e); return r ? [sum[0] + r[0], sum[1] + r[1]] : sum; }, [0, 0]);
+  function expenseRow(e) {
+    const r = expenseYen(e);
+    return html`<li><span class="expense-date">${e.date}</span><span class="expense-name">${e.name}<small>${e.note}</small></span><span class="expense-amount">${e.usd ? html`US$${e.usd.toFixed(2)}<small>≈ ${yen(r[0])}</small>` : r ? html`${amountRange(r, yen)}<small>≈ ${amountRange(r, usd)}</small>` : html`<small>未計入</small>`}</span></li>`;
+  }
+  function expenseSummary() {
+    const total = expenseSum(trip.expenses);
+    const each = total.map(n => n / 2);
+    return html`<div class="expense-total"><span>兩人合計</span><strong>${amountRange(total, yen)}</strong><span class="expense-usd">≈ ${amountRange(total, usd)}</span><small>每人 ${amountRange(each, yen)} ≈ ${amountRange(each, usd)}</small></div><div class="expense-split">${expenseGroups.map(([status, label]) => { const sum = expenseSum(trip.expenses.filter(e => e.status === status)); return html`<div class="${status}"><span>${t(label)}</span><strong>${amountRange(sum, yen)}</strong><small>≈ ${amountRange(sum, usd)}</small></div>`; }).join('')}</div>`;
+  }
+  const expenseList = () => expenseGroups.map(([status, label, hint]) => html`<section class="expense-group ${status}"><h3>${t(label)}<small>${t(hint)}</small></h3><ul class="expense-list">${trip.expenses.filter(e => e.status === status).sort((a, b) => a.date.localeCompare(b.date)).map(expenseRow).join('')}</ul></section>`).join('');
+  function renderCosts() {
+    return html`${pageHeading('WHAT THE TRIP COSTS', '花多少，心裡有數。', '兩人的交通、門票，和行程裡已知價格的餐廳。不含機票、住宿、計程車、咖啡甜點與購物；有範圍的項目從最低算到最高。')}<div class="costs-layout"><aside class="costs-summary"><div id="expense-summary">${expenseSummary()}</div><label class="expense-rate"><span>匯率</span><span class="expense-rate-input">1 USD = ¥<input id="usd-rate" type="number" inputmode="decimal" min="50" max="400" step="0.1" value="${usdRate}"></span><small>${t('預設匯率')}：${trip.usdRateDate} ¥${trip.usdRate} · ${t('改了會存在這支手機')}</small></label></aside><div class="costs-groups" id="expense-list">${expenseList()}</div></div>`;
   }
   async function copyAddress(id) {
     const p = placeById.get(id);
@@ -385,6 +409,15 @@
     if (event.target.id === 'day-note') {
       state.notes[selectedDate] = event.target.value; save();
       document.getElementById('note-save-status').textContent = t(storageAvailable ? '已自動儲存' : '請匯出備份');
+    }
+    if (event.target.id === 'usd-rate') {
+      const rate = Number(event.target.value);
+      if (rate >= 50 && rate <= 400) {
+        usdRate = rate;
+        try { localStorage.setItem(rateKey, String(rate)); } catch {}
+        document.getElementById('expense-summary').innerHTML = expenseSummary();
+        document.getElementById('expense-list').innerHTML = expenseList();
+      }
     }
   });
   document.addEventListener('change', event => {

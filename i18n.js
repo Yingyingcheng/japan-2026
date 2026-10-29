@@ -85,5 +85,9 @@ window.TRIP_UI_EN = {
   '旅程還沒開始，先看看抵達日': 'The trip has not started yet. Here is arrival day.', '旅程已結束，可以回看每天的行程': 'The trip is over. Look back through each day.',
   '已放進口袋清單': 'Saved to favorite places', '已取消收藏': 'Removed from favorites', '已記錄訂妥；請保留實際確認信': 'Marked booked. Keep the actual confirmation.', '已改為待安排': 'Changed to “to arrange”',
   '備份已匯出，可在另一支手機匯入': 'Backup exported. You can import it on another phone.', '已自動儲存': 'Saved automatically', '請匯出備份': 'Please export a backup',
+  '旅費': 'Costs', '旅費明細': 'Trip costs', '花多少，心裡有數。': 'Know what it costs.', '兩人合計': 'Total for two', '每人 ': 'Per person ', '已付款': 'Paid', '當天付': 'Pay on the day', '計畫中': 'Planned',
+  '已刷卡或線上付清': 'Charged to card or paid online', '已訂位或價格固定，到現場付': 'Booked or fixed price, pay there', '還沒訂，先抓預算': 'Not booked yet, budget only', '未計入': 'Not counted',
+  '匯率': 'Exchange rate', '預設匯率': 'Default rate', '改了會存在這支手機': 'Changes are saved on this phone',
+  '兩人的交通、門票，和行程裡已知價格的餐廳。不含機票、住宿、計程車、咖啡甜點與購物；有範圍的項目從最低算到最高。': 'Transport, tickets and planned restaurants with known prices, for two. Flights, hotels, taxis, cafés, desserts and shopping are not included; ranges run from lowest to highest.',
   ' 個地點 · 已收藏 ': ' places · Saved ', ' 個': '', '風景插畫': ' landscape illustration', '週': '', '：': ': ', '（': '(', '）': ')', '。': '.'
 };
