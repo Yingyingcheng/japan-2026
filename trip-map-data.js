@@ -317,6 +317,13 @@ window.TRIP_MAP_POINTS = {
     "matched": "京都府京都市中京区貝屋町５６１番地",
     "source": "https://msearch.gsi.go.jp/address-search/AddressSearch?q=%E4%BA%AC%E9%83%BD%E5%BA%9C%E4%BA%AC%E9%83%BD%E5%B8%82%E4%B8%AD%E4%BA%AC%E5%8C%BA%E8%B2%9D%E5%B1%8B%E7%94%BA561"
   },
+  "kyoboshi": {
+    "lat": 35.00478,
+    "lon": 135.775681,
+    "query": "京都府京都市東山区祇園町北側347",
+    "matched": "京都府京都市東山区祇園町北側３４７番地",
+    "source": "https://msearch.gsi.go.jp/address-search/AddressSearch?q=%E4%BA%AC%E9%83%BD%E5%BA%9C%E4%BA%AC%E9%83%BD%E5%B8%82%E6%9D%B1%E5%B1%B1%E5%8C%BA%E7%A5%87%E5%9C%92%E7%94%BA%E5%8C%97%E5%81%B4347"
+  },
   "daimaru-kyoto": {
     "lat": 35.003681,
     "lon": 135.761841,
@@ -380,6 +387,13 @@ window.TRIP_MAP_POINTS = {
     "matched": "京都府京都市中京区笹屋町４４７番地",
     "source": "https://msearch.gsi.go.jp/address-search/AddressSearch?q=%E4%BA%AC%E9%83%BD%E5%BA%9C%E4%BA%AC%E9%83%BD%E5%B8%82%E4%B8%AD%E4%BA%AC%E5%8C%BA%E7%AC%B9%E5%B1%8B%E7%94%BA447"
   },
+  "to-kyoto": {
+    "lat": 35.011623,
+    "lon": 135.761734,
+    "query": "京都府京都市中京区高田町500",
+    "matched": "京都府京都市中京区高田町",
+    "source": "https://msearch.gsi.go.jp/address-search/AddressSearch?q=%E4%BA%AC%E9%83%BD%E5%BA%9C%E4%BA%AC%E9%83%BD%E5%B8%82%E4%B8%AD%E4%BA%AC%E5%8C%BA%E9%AB%98%E7%94%B0%E7%94%BA"
+  },
   "flip-up": {
     "lat": 35.0110,
     "lon": 135.7615,
@@ -407,6 +421,13 @@ window.TRIP_MAP_POINTS = {
     "query": "京都府京都市中京区三坊西洞院町561",
     "matched": "京都府京都市中京区三坊西洞院町５６１番地",
     "source": "https://msearch.gsi.go.jp/address-search/AddressSearch?q=%E4%BA%AC%E9%83%BD%E5%BA%9C%E4%BA%AC%E9%83%BD%E5%B8%82%E4%B8%AD%E4%BA%AC%E5%8C%BA%E4%B8%89%E5%9D%8A%E8%A5%BF%E6%B4%9E%E9%99%A2%E7%94%BA561"
+  },
+  "umeda": {
+    "lat": 34.7032689,
+    "lon": 135.4962444,
+    "query": "ルクア大阪 大阪駅",
+    "matched": "ルクア大阪",
+    "source": "https://www.openstreetmap.org/way/1313244351"
   }
 };
 
@@ -457,6 +478,9 @@ window.TRIP_MAP_ROUTES = {
     'inari': { name: ['稻荷', 'Inari'], lon: 135.77067, lat: 34.96681 },
     'uji': { name: ['宇治', 'Uji'], lon: 135.8007, lat: 34.89041 },
     'kansai-airport': { name: ['關西機場', 'Kansai Airport'], lon: 135.24342, lat: 34.43593 },
+    'hankyu-karasuma': { name: ['阪急烏丸', 'Hankyu Karasuma'], lon: 135.7597, lat: 35.0035 },
+    'hankyu-umeda': { name: ['阪急大阪梅田', 'Hankyu Osaka-Umeda'], lon: 135.4983721, lat: 34.7054194 },
+    osaka: { name: ['大阪', 'Osaka'], lon: 135.4961773, lat: 34.7025087 },
     'jingumae-2-bus': { name: ['神宮前二丁目', 'Jingumae 2-chome'], lon: 139.71101, lat: 35.67476 },
     'yoyogi-bus': { name: ['代々木駅', 'Yoyogi Station'], lon: 139.70199, lat: 35.68226 }
   },
@@ -478,7 +502,9 @@ window.TRIP_MAP_ROUTES = {
     SK: { name: ['東海道新幹線', 'Tokaido Shinkansen'], color: '#123f87', square: true },
     D: { name: ['JR 奈良線', 'JR Nara Line'], color: '#9a7b3c', square: true },
     K: { name: ['烏丸線', 'Karasuma Line'], color: '#3ca13d' },
-    HA: { name: ['HARUKA', 'HARUKA'], color: '#0f9bd7', square: true }
+    HA: { name: ['HARUKA', 'HARUKA'], color: '#0f9bd7', square: true },
+    HK: { name: ['阪急京都線', 'Hankyu Kyoto Line'], color: '#8a1c2b' },
+    JK: { name: ['JR 京都線 新快速', 'JR Kyoto Line Special Rapid'], color: '#0072bc', square: true }
   },
   areas: [
     { id: 'gaien', city: 'tokyo', name: ['外苑', 'Gaien'], places: ['ginkgo', 'hm-cafe'] },
@@ -498,12 +524,13 @@ window.TRIP_MAP_ROUTES = {
     { id: 'kyoto-station', city: 'kyoto', name: ['京都車站', 'Kyoto Station'], places: ['hoho', 'kyo-chabana'] },
     { id: 'gojo', city: 'kyoto', name: ['五條', 'Gojo'], places: ['lorimer'] },
     { id: 'higashiyama', city: 'kyoto', name: ['東山・清水寺', 'Higashiyama / Kiyomizu'], short: ['清水寺', 'Kiyomizu'], places: ['ichikawaya', 'kimono', 'kiyomizu'] },
+    { id: 'gion', city: 'kyoto', name: ['祇園', 'Gion'], places: ['kyoboshi'] },
     { id: 'tofukuji', city: 'kyoto', name: ['東福寺', 'Tofukuji'], places: ['tofukuji'] },
     { id: 'fushimi', city: 'kyoto', name: ['伏見稻荷', 'Fushimi Inari'], places: ['fushimi-inari'] },
     { id: 'uji', city: 'kyoto', name: ['宇治', 'Uji'], places: ['byodoin', 'tokichi-uji'] },
     { id: 'okazaki', city: 'kyoto', name: ['永觀堂・南禪寺', 'Eikando / Nanzenji'], short: ['永觀堂', 'Eikando'], places: ['eikando'] },
     { id: 'teramachi', city: 'kyoto', name: ['寺町・河原町', 'Teramachi / Kawaramachi'], short: ['寺町', 'Teramachi'], places: ['smart-coffee', 'umezono-teramachi', 'teramachi', 'ippodo'] },
-    { id: 'oike', city: 'kyoto', name: ['御所南・烏丸御池', 'Gosho-minami / Karasuma Oike'], short: ['烏丸御池', 'Karasuma Oike'], places: ['blend-kyoto', 'flip-up', 'yugen', 'marukyu-nishinotoin'] },
+    { id: 'oike', city: 'kyoto', name: ['御所南・烏丸御池', 'Gosho-minami / Karasuma Oike'], short: ['烏丸御池', 'Karasuma Oike'], places: ['to-kyoto', 'blend-kyoto', 'flip-up', 'yugen', 'marukyu-nishinotoin'] },
     { id: 'shijo-karasuma', city: 'kyoto', name: ['四條烏丸・錦', 'Shijo-Karasuma / Nishiki'], short: ['四條烏丸', 'Shijo-Karasuma'], places: ['okuniya-mambei', 'daimaru-kyoto', 'sumi-roman'] }
   ],
   days: {
@@ -608,23 +635,24 @@ window.TRIP_MAP_ROUTES = {
         { to: 'byodoin', s: [{ l: 'D', a: 'inari', b: 'uji', m: 20 }, { w: 10 }], note: ['先到中村藤吉抽整理券', 'Get a ticket at Nakamura Tokichi first'] },
         { to: 'tokichi-uji', s: [{ w: 'est' }], note: ['叫號後回來', 'Come back when called'] },
         { to: 'kimono', s: [{ w: 0 }, { l: 'D', a: 'uji', b: 'kyoto', m: 17 }, { taxi: 15 }], note: ['約 17:00 前還和服', 'Return the kimono by about 17:00'] },
-        { to: 'daimaru-kyoto', s: [{ taxi: 15 }], note: ['茅乃舎在 B1', 'Kayanoya is on B1'] },
-        { to: 'sumi-roman', s: [{ w: 5 }], note: ['先吃晚餐再去永觀堂', 'Dinner first, then Eikando'] },
-        { to: 'eikando', s: [{ taxi: '20–25' }], note: ['受付到 20:30，21:00 閉門', 'Entry until 20:30; closes 21:00'] },
+        { to: 'kyoboshi', s: [{ taxi: 10 }], note: ['18:30 入席，先吃飯再去永觀堂', 'Sit at 18:30; dinner first, then Eikando'] },
+        { to: 'eikando', s: [{ taxi: 15 }], note: ['受付到 20:30，21:00 閉門', 'Entry until 20:30; closes 21:00'] },
         { to: 'hyatt', s: [{ taxi: '15–20' }] }
       ]
     },
     '2026-11-27': {
       tab: ['茶舖・大阪', 'Tea / Osaka'],
-      title: ['早上御所南短逛，午餐後去大阪', 'A short Gosho-minami morning, then Osaka after lunch'],
+      title: ['To. 早餐後短逛御所南，午餐後去大阪', 'To. breakfast, a short Gosho-minami morning, then Osaka'],
       legs: [
-        { to: 'blend-kyoto', s: [{ taxi: '15–20' }], note: ['10:00 開門，不久留', 'Opens 10:00; short stop'] },
-        { to: 'ippodo', s: [{ w: 7 }] },
+        { to: 'to-kyoto', s: [{ taxi: '15–20' }], note: ['8:00 モーニング，7:55 到', '8:00 morning; arrive 7:55'] },
         { to: 'flip-up', s: [{ w: 'est' }], note: ['買麵包外帶', 'Takeaway bread'] },
+        { to: 'blend-kyoto', s: [{ w: 'est' }], note: ['10:00 開門，不久留', 'Opens 10:00; short stop'] },
+        { to: 'ippodo', s: [{ w: 7 }] },
         { to: 'yugen', s: [{ w: 'est' }], note: ['11:00 開門', 'Opens 11:00'] },
         { to: 'marukyu-nishinotoin', s: [{ w: 'est' }], note: ['午餐前短坐抹茶', 'Short matcha before lunch'] },
-        { to: 'okuniya-mambei', s: [{ w: 'est' }], note: ['12:30 預約', '12:30 reservation'] },
-        { to: 'hoho', s: [{ taxi: 0 }], note: ['往京都站轉 JR 去大阪；晚上回 Hyatt', 'To Kyoto Station for JR to Osaka; back to Hyatt at night'] }
+        { to: 'okuniya-mambei', s: [{ w: 'est' }], note: ['12:30 已訂，限 1 小時', '12:30 booked; 1 hour'] },
+        { to: 'umeda', s: [{ w: 3 }, { l: 'HK', a: 'hankyu-karasuma', b: 'hankyu-umeda', m: 43 }], note: ['阪急特急，刷 Suica；不要先回飯店', 'Hankyu limited express, tap Suica; skip the hotel first'] },
+        { to: 'hyatt', s: [{ w: 0 }, { l: 'JK', a: 'osaka', b: 'kyoto', m: 29 }, { taxi: '5–10' }], note: ['JR 新快速到京都站，計程車回 Hyatt', 'JR Special Rapid to Kyoto Station, then taxi to Hyatt'] }
       ]
     },
     '2026-11-28': {
