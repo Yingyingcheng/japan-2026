@@ -352,12 +352,33 @@ window.TRIP_MAP_POINTS = {
     "matched": "京都府宇治市宇治壱番１０番地",
     "source": "https://msearch.gsi.go.jp/address-search/AddressSearch?q=%E4%BA%AC%E9%83%BD%E5%BA%9C%E5%AE%87%E6%B2%BB%E5%B8%82%E5%AE%87%E6%B2%BB%E5%A3%B1%E7%95%AA10"
   },
+  "irori-beniya": {
+    "lat": 34.8898623,
+    "lon": 135.8023891,
+    "query": "いろり紅家（HotPepper 店舗地図）",
+    "matched": "京都府宇治市宇治壱番1番地",
+    "source": "https://www.hotpepper.jp/strJ001257874/map/"
+  },
+  "tokichi-byodoin": {
+    "lat": 34.891701,
+    "lon": 135.806442,
+    "query": "京都府宇治市宇治蓮華5-1",
+    "matched": "京都府宇治市宇治蓮華５番地",
+    "source": "https://msearch.gsi.go.jp/address-search/AddressSearch?q=%E4%BA%AC%E9%83%BD%E5%BA%9C%E5%AE%87%E6%B2%BB%E5%B8%82%E5%AE%87%E6%B2%BB%E8%93%AE%E8%8F%AF5-1"
+  },
   "eikando": {
     "lat": 35.013435,
     "lon": 135.794403,
     "query": "京都府京都市左京区永観堂町48",
     "matched": "京都府京都市左京区永観堂町４８番地",
     "source": "https://msearch.gsi.go.jp/address-search/AddressSearch?q=%E4%BA%AC%E9%83%BD%E5%BA%9C%E4%BA%AC%E9%83%BD%E5%B8%82%E5%B7%A6%E4%BA%AC%E5%8C%BA%E6%B0%B8%E8%A6%B3%E5%A0%82%E7%94%BA48"
+  },
+  "enyuan-kobayashi": {
+    "lat": 35.004341,
+    "lon": 135.774765,
+    "query": "京都府京都市東山区富永町125-2",
+    "matched": "京都府京都市東山区富永町１２５番地",
+    "source": "https://msearch.gsi.go.jp/address-search/AddressSearch?q=%E4%BA%AC%E9%83%BD%E5%BA%9C%E4%BA%AC%E9%83%BD%E5%B8%82%E6%9D%B1%E5%B1%B1%E5%8C%BA%E5%AF%8C%E6%B0%B8%E7%94%BA125-2"
   },
   "ippodo": {
     "lat": 35.014042,
@@ -512,7 +533,8 @@ window.TRIP_MAP_ROUTES = {
     { id: 'higashiyama', city: 'kyoto', name: ['東山・清水寺', 'Higashiyama / Kiyomizu'], short: ['清水寺', 'Kiyomizu'], places: ['ichikawaya', 'kimono', 'kiyomizu'] },
     { id: 'tofukuji', city: 'kyoto', name: ['東福寺', 'Tofukuji'], places: ['tofukuji'] },
     { id: 'fushimi', city: 'kyoto', name: ['伏見稻荷', 'Fushimi Inari'], places: ['fushimi-inari'] },
-    { id: 'uji', city: 'kyoto', name: ['宇治', 'Uji'], places: ['byodoin', 'tokichi-uji'] },
+    { id: 'uji', city: 'kyoto', name: ['宇治', 'Uji'], places: ['byodoin', 'tokichi-uji', 'irori-beniya', 'tokichi-byodoin'] },
+    { id: 'gion', city: 'kyoto', name: ['祇園', 'Gion'], places: ['enyuan-kobayashi'] },
     { id: 'okazaki', city: 'kyoto', name: ['永觀堂・南禪寺', 'Eikando / Nanzenji'], short: ['永觀堂', 'Eikando'], places: ['eikando'] },
     { id: 'teramachi', city: 'kyoto', name: ['寺町・河原町', 'Teramachi / Kawaramachi'], short: ['寺町', 'Teramachi'], places: ['smart-coffee', 'umezono-teramachi', 'teramachi', 'ippodo'] },
     { id: 'oike', city: 'kyoto', name: ['御所南・烏丸御池', 'Gosho-minami / Karasuma Oike'], short: ['烏丸御池', 'Karasuma Oike'], places: ['to-kyoto', 'blend-kyoto', 'flip-up', 'yugen', 'marukyu-nishinotoin'] },
@@ -610,17 +632,18 @@ window.TRIP_MAP_ROUTES = {
     },
     '2026-11-26': {
       tab: ['和服・宇治', 'Kimono / Uji'],
-      title: ['東山穿和服，一路往南到伏見和宇治', 'Kimono in Higashiyama, then south to Fushimi and Uji'],
+      title: ['東山穿和服往南到伏見、宇治，晚上回祇園', 'Kimono in Higashiyama, south to Fushimi and Uji, back to Gion for dinner'],
       legs: [
         { to: 'ichikawaya', s: [{ w: '10–15' }], alt: ['或短程計程車', 'Or a short taxi'] },
         { to: 'kimono', s: [{ taxi: '5–10' }] },
         { to: 'kiyomizu', s: [{ w: 'est' }], note: ['穿和服走二年坂、三年坂上去', 'Walk up Ninenzaka and Sannenzaka in kimono'] },
         { to: 'tofukuji', s: [{ taxi: '10–15' }] },
         { to: 'fushimi-inari', s: [{ w: 0 }, { l: 'D', a: 'tofukuji-station', b: 'inari', n: 1 }] },
-        { to: 'byodoin', s: [{ l: 'D', a: 'inari', b: 'uji', m: 20 }, { w: 10 }], note: ['先到中村藤吉抽整理券', 'Get a ticket at Nakamura Tokichi first'] },
-        { to: 'tokichi-uji', s: [{ w: 'est' }], note: ['叫號後回來', 'Come back when called'] },
-        { to: 'eikando', s: [{ w: 0 }, { l: 'D', a: 'uji', b: 'kyoto', m: 17 }, { taxi: 15, to: 'kimono' }, { taxi: 10, to: 'gion' }, { taxi: 15 }], note: ['約 17:00 前還和服，在祇園吃晚餐（未定）；永觀堂受付到 20:30，21:00 閉門', 'Return the kimono by about 17:00, dinner in Gion (not decided); Eikando entry until 20:30, closes 21:00'] },
-        { to: 'hyatt', s: [{ taxi: '15–20' }] }
+        { to: 'irori-beniya', s: [{ l: 'D', a: 'inari', b: 'uji', m: 20 }, { w: 3 }], note: ['想吃午餐才來；先到中村藤吉本店抽整理券', 'Only if we want lunch; get a ticket at the Nakamura Tokichi main shop first'] },
+        { to: 'byodoin', s: [{ w: 10 }], note: ['沿宇治橋通、平等院表參道走', 'Along Ujibashi-dori and the Byodoin Omotesando'] },
+        { to: 'tokichi-uji', s: [{ w: 10 }], note: ['叫號後回來', 'Come back when called'] },
+        { to: 'enyuan-kobayashi', s: [{ w: 1 }, { l: 'D', a: 'uji', b: 'kyoto', m: 17 }, { taxi: '15–20', to: 'kimono' }, { w: 30 }], note: ['16:00 離開宇治，17:30 前在清水寺店還和服，再經二年坂、八坂神社、花見小路走到白川；19:30 晚餐（還沒訂）', 'Leave Uji at 16:00, return the kimono at the Kiyomizu shop by 17:30, then walk via Ninenzaka, Yasaka Shrine and Hanamikoji to Shirakawa; dinner at 19:30 (not booked yet)'], alt: ['或從清水寺店搭計程車約 10 分', 'Or a taxi from the Kiyomizu shop, about 10 min'] },
+        { to: 'hyatt', s: [{ taxi: 15 }] }
       ]
     },
     '2026-11-27': {
