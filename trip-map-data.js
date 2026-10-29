@@ -661,7 +661,7 @@ window.TRIP_MAP_ROUTES = {
       tab: ['回程', 'Going home'],
       title: ['京都車站搭 HARUKA 到關西機場', 'HARUKA from Kyoto Station to Kansai Airport'],
       legs: [
-        { to: 'kix', s: [{ taxi: 0 }, { l: 'HA', a: 'kyoto', b: 'kansai-airport', m: '80–90' }], note: ['HARUKA 約 09:30–10:00 出發，尚未指定班次；GK55 14:55 起飛', 'HARUKA around 09:30–10:00, train not chosen yet; GK55 departs at 14:55'] }
+        { to: 'kix', s: [{ taxi: 0 }, { l: 'HA', a: 'kyoto', b: 'kansai-airport', m: '80', dep: '10:00', arr: '11:21' }], note: ['主方案 HARUKA 17 號 10:00 → 11:21；停駛改八条口機場巴士。GK55 14:55 關西 T1', 'Plan A: HARUKA 17 at 10:00 → 11:21; if suspended, Hachijo airport bus. GK55 14:55 from Kansai T1'] }
       ]
     }
   }
