@@ -191,6 +191,20 @@ window.TRIP_MAP_POINTS = {
     "matched": "東京都港区麻布台一丁目２番",
     "source": "https://msearch.gsi.go.jp/address-search/AddressSearch?q=%E6%9D%B1%E4%BA%AC%E9%83%BD%E6%B8%AF%E5%8C%BA%E9%BA%BB%E5%B8%83%E5%8F%B01-2-4"
   },
+  "harbs-azabudai": {
+    "lat": 35.662197,
+    "lon": 139.741791,
+    "query": "東京都港区虎ノ門5-9-1",
+    "matched": "東京都港区麻布台一丁目２番",
+    "source": "https://msearch.gsi.go.jp/address-search/AddressSearch?q=%E6%9D%B1%E4%BA%AC%E9%83%BD%E6%B8%AF%E5%8C%BA%E9%BA%BB%E5%B8%83%E5%8F%B01-2-4"
+  },
+  "azabudai-jiyugaoka": {
+    "lat": 35.662197,
+    "lon": 139.741791,
+    "query": "東京都港区麻布台1-2-4",
+    "matched": "東京都港区麻布台一丁目２番",
+    "source": "https://msearch.gsi.go.jp/address-search/AddressSearch?q=%E6%9D%B1%E4%BA%AC%E9%83%BD%E6%B8%AF%E5%8C%BA%E9%BA%BB%E5%B8%83%E5%8F%B01-2-4"
+  },
   "shinchan": {
     "lat": 35.681252,
     "lon": 139.767242,
@@ -529,7 +543,7 @@ window.TRIP_MAP_ROUTES = {
     { id: 'roppongi', city: 'tokyo', name: ['六本木・西麻布', 'Roppongi'], places: ['roppongi-hills', 'meat-man', 'gonpachi'] },
     { id: 'tomigaya', city: 'tokyo', name: ['富谷・代代木公園', 'Tomigaya / Yoyogi'], places: ['fuglen-tokyo', 'yoyogi-park'] },
     { id: 'gyoen', city: 'tokyo', name: ['新宿御苑・代々木', 'Shinjuku Gyoen / Yoyogi'], short: ['新宿御苑', 'Shinjuku Gyoen'], places: ['gyoen', 'tanbo'] },
-    { id: 'azabudai', city: 'tokyo', name: ['麻布台', 'Azabudai'], places: ['ogawa-azabudai', 'teamlab'] },
+    { id: 'azabudai', city: 'tokyo', name: ['麻布台', 'Azabudai'], places: ['azabudai-jiyugaoka', 'teamlab'] },
     { id: 'shinjuku', city: 'tokyo', name: ['新宿', 'Shinjuku'], places: ['shinjuku-cat', 'gelato-pique', 'echire-isetan'] },
     { id: 'ginza', city: 'tokyo', name: ['銀座', 'Ginza'], places: ['hanayama', 'glitch', 'ginza', 'sushi-yu'] },
     { id: 'tokyo-station', city: 'tokyo', name: ['東京車站', 'Tokyo Station'], places: ['toriba', 'shinchan'] },
@@ -586,7 +600,7 @@ window.TRIP_MAP_ROUTES = {
         { to: 'hanayama', s: [{ l: 'G', a: 'gaiemmae', b: 'ginza', m: 15 }, { w: 7 }] },
         { to: 'glitch', s: [{ w: 3 }], note: ['先抽號碼牌，再去喝咖啡', 'Get the queue ticket first, then coffee'] },
         { to: 'hanayama', s: [{ w: 3 }] },
-        { to: 'ogawa-azabudai', s: [{ l: 'H', a: 'higashi-ginza', b: 'kamiyacho', m: 10 }], note: ['吃完烏冬直達；沒吃就從 GLITCH 出發', 'Straight after udon; skip from GLITCH if no ticket'] },
+        { to: 'azabudai-jiyugaoka', s: [{ l: 'H', a: 'higashi-ginza', b: 'kamiyacho', m: 10 }], note: ['吃完烏冬直達；沒吃就從 GLITCH 出發', 'Straight after udon; skip from GLITCH if no ticket'] },
         { to: 'teamlab', s: [{ w: 'est' }], note: ['隔壁棟', 'Next building'] },
         { to: 'toriba', s: [{ l: 'H', a: 'kamiyacho', b: 'toranomon-hills', m: 2, n: 1 }, { l: 'G', a: 'toranomon', b: 'kyobashi', m: 7, n: 3 }, { w: 7 }], t: '25', note: ['虎ノ門ヒルズ轉銀座線；京橋 7 號出口', 'Transfer at Toranomon Hills to the Ginza line; Kyobashi exit 7'] },
         { to: 'shinchan', s: [{ w: '8–10' }], note: ['同一側地下街到人物街', 'Same side, underground to Character Street'] },
