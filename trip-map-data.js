@@ -198,6 +198,13 @@ window.TRIP_MAP_POINTS = {
     "matched": "東京都千代田区丸の内一丁目９番",
     "source": "https://msearch.gsi.go.jp/address-search/AddressSearch?q=%E6%9D%B1%E4%BA%AC%E9%83%BD%E5%8D%83%E4%BB%A3%E7%94%B0%E5%8C%BA%E4%B8%B8%E3%81%AE%E5%86%851-9-1"
   },
+  "toriba": {
+    "lat": 35.680035,
+    "lon": 139.769333,
+    "query": "東京都中央区八重洲2-1-1",
+    "matched": "東京都中央区八重洲二丁目１番１号",
+    "source": "https://msearch.gsi.go.jp/address-search/AddressSearch?q=%E6%9D%B1%E4%BA%AC%E9%83%BD%E4%B8%AD%E5%A4%AE%E5%8C%BA%E5%85%AB%E9%87%8D%E6%B4%B22-1-1"
+  },
   "echire-isetan": {
     "lat": 35.691074,
     "lon": 139.704651,
@@ -520,10 +527,10 @@ window.TRIP_MAP_ROUTES = {
     { id: 'roppongi', city: 'tokyo', name: ['六本木・西麻布', 'Roppongi'], places: ['roppongi-hills', 'meat-man', 'gonpachi'] },
     { id: 'tomigaya', city: 'tokyo', name: ['富谷・代代木公園', 'Tomigaya / Yoyogi'], places: ['fuglen-tokyo', 'yoyogi-park'] },
     { id: 'gyoen', city: 'tokyo', name: ['新宿御苑・代々木', 'Shinjuku Gyoen / Yoyogi'], short: ['新宿御苑', 'Shinjuku Gyoen'], places: ['gyoen', 'tanbo'] },
-    { id: 'azabudai', city: 'tokyo', name: ['麻布台', 'Azabudai'], places: ['ogawa-azabudai', 'teamlab'] },
+    { id: 'azabudai', city: 'tokyo', name: ['麻布台', 'Azabudai'], places: ['ogawa-azabudai', 'parlor-yazawa', 'teamlab'] },
     { id: 'shinjuku', city: 'tokyo', name: ['新宿', 'Shinjuku'], places: ['shinjuku-cat', 'gelato-pique', 'echire-isetan'] },
     { id: 'ginza', city: 'tokyo', name: ['銀座', 'Ginza'], places: ['hanayama', 'glitch', 'ginza', 'sushi-yu'] },
-    { id: 'tokyo-station', city: 'tokyo', name: ['東京車站', 'Tokyo Station'], places: ['shinchan'] },
+    { id: 'tokyo-station', city: 'tokyo', name: ['東京車站', 'Tokyo Station'], places: ['toriba', 'shinchan'] },
     { id: 'hongo', city: 'tokyo', name: ['本鄉・東大', 'Hongo'], places: ['todai'] },
     { id: 'gotokuji', city: 'tokyo', name: ['豪德寺', 'Gotokuji'], places: ['gotokuji'] },
     { id: 'north-shore', city: 'kawaguchiko', name: ['河口湖北岸', 'North shore'], places: ['oishi', 'lake'] },
@@ -571,22 +578,19 @@ window.TRIP_MAP_ROUTES = {
       ]
     },
     '2026-11-22': {
-      tab: ['銀座・東側', 'Ginza / East'],
-      title: ['東邊的一天：銀座、麻布台與東京車站', 'An eastern day: Ginza, Azabudai and Tokyo Station'],
+      tab: ['銀座・八重洲', 'Ginza / Yaesu'],
+      title: ['東邊的一天：銀座、麻布台與八重洲', 'An eastern day: Ginza, Azabudai and Yaesu'],
       legs: [
         { to: 'hanayama', s: [{ l: 'G', a: 'gaiemmae', b: 'ginza', m: 15 }, { w: 7 }] },
         { to: 'glitch', s: [{ w: 3 }], note: ['先抽號碼牌，再去喝咖啡', 'Get the queue ticket first, then coffee'] },
         { to: 'hanayama', s: [{ w: 3 }] },
-        { to: 'todai', s: [{ w: 8 }, { l: 'M', a: 'ginza', b: 'hongo-sanchome', m: 12 }, { w: 8 }] },
-        { to: 'ogawa-azabudai', s: [{ l: 'N', a: 'todaimae', b: 'roppongi-itchome', m: 20 }, { w: 0 }], note: ['地下通道直通麻布台之丘', 'Underground passage to Azabudai Hills'] },
+        { to: 'ogawa-azabudai', s: [{ l: 'H', a: 'higashi-ginza', b: 'kamiyacho', m: 10 }], note: ['吃完烏冬直達；沒吃就從 GLITCH 出發', 'Straight after udon; skip from GLITCH if no ticket'] },
         { to: 'teamlab', s: [{ w: 'est' }], note: ['隔壁棟', 'Next building'] },
-        { to: 'shinchan', s: [{ l: 'H', a: 'kamiyacho', b: 'ginza', m: 6, n: 3 }, { l: 'M', a: 'ginza', b: 'tokyo', n: 1 }, { w: 10 }], t: '30' },
+        { to: 'toriba', s: [{ l: 'H', a: 'kamiyacho', b: 'ginza', m: 6, n: 3 }, { l: 'M', a: 'ginza', b: 'tokyo', n: 1 }, { w: 8 }], t: '25–30', note: ['出八重洲南口，16:00 前到 TORIBA', 'Yaesu South Exit; TORIBA before 16:00'] },
+        { to: 'shinchan', s: [{ w: '8–10' }], note: ['同一側地下街到人物街', 'Same side, underground to Character Street'] },
         { to: 'ginza', s: [{ l: 'M', a: 'tokyo', b: 'ginza', n: 1 }] },
         { to: 'sushi-yu', s: [{ w: 10 }] },
         { to: 'aoyama', s: [{ w: 8 }, { l: 'G', a: 'kyobashi', b: 'gaiemmae', m: 15 }] }
-      ],
-      alts: [
-        { skip: 'todai', s: [{ l: 'H', a: 'higashi-ginza', b: 'kamiyacho', m: 10 }], label: ['跳過東大的話', 'If we skip UTokyo'] }
       ]
     },
     '2026-11-23': {
