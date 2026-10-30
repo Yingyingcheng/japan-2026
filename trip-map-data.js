@@ -527,7 +527,7 @@ window.TRIP_MAP_ROUTES = {
     { id: 'roppongi', city: 'tokyo', name: ['六本木・西麻布', 'Roppongi'], places: ['roppongi-hills', 'meat-man', 'gonpachi'] },
     { id: 'tomigaya', city: 'tokyo', name: ['富谷・代代木公園', 'Tomigaya / Yoyogi'], places: ['fuglen-tokyo', 'yoyogi-park'] },
     { id: 'gyoen', city: 'tokyo', name: ['新宿御苑・代々木', 'Shinjuku Gyoen / Yoyogi'], short: ['新宿御苑', 'Shinjuku Gyoen'], places: ['gyoen', 'tanbo'] },
-    { id: 'azabudai', city: 'tokyo', name: ['麻布台', 'Azabudai'], places: ['ogawa-azabudai', 'parlor-yazawa', 'teamlab'] },
+    { id: 'azabudai', city: 'tokyo', name: ['麻布台', 'Azabudai'], places: ['ogawa-azabudai', 'teamlab'] },
     { id: 'shinjuku', city: 'tokyo', name: ['新宿', 'Shinjuku'], places: ['shinjuku-cat', 'gelato-pique', 'echire-isetan'] },
     { id: 'ginza', city: 'tokyo', name: ['銀座', 'Ginza'], places: ['hanayama', 'glitch', 'ginza', 'sushi-yu'] },
     { id: 'tokyo-station', city: 'tokyo', name: ['東京車站', 'Tokyo Station'], places: ['toriba', 'shinchan'] },
