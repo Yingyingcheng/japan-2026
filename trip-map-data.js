@@ -456,6 +456,62 @@ window.TRIP_MAP_POINTS = {
     "query": "ルクア大阪 大阪駅",
     "matched": "ルクア大阪",
     "source": "https://www.openstreetmap.org/way/1313244351"
+  },
+  "umekita": {
+    "lat": 34.703248,
+    "lon": 135.4934039,
+    "query": "うめきたグリーンプレイス",
+    "matched": "うめきたグリーンプレイス",
+    "source": "https://www.openstreetmap.org/way/1371178368"
+  },
+  "gorichan": {
+    "lat": 34.675919,
+    "lon": 135.502197,
+    "query": "大阪府大阪市中央区南船場3-5-28",
+    "matched": "大阪府大阪市中央区南船場三丁目５番２８号",
+    "source": "https://msearch.gsi.go.jp/address-search/AddressSearch?q=%E5%A4%A7%E9%98%AA%E5%BA%9C%E5%A4%A7%E9%98%AA%E5%B8%82%E4%B8%AD%E5%A4%AE%E5%8C%BA%E5%8D%97%E8%88%B9%E5%A0%B43-5-28"
+  },
+  "canele-japon": {
+    "lat": 34.676601,
+    "lon": 135.506485,
+    "query": "大阪府大阪市中央区南船場1-17-21",
+    "matched": "大阪府大阪市中央区南船場一丁目１７番２１号",
+    "source": "https://msearch.gsi.go.jp/address-search/AddressSearch?q=%E5%A4%A7%E9%98%AA%E5%BA%9C%E5%A4%A7%E9%98%AA%E5%B8%82%E4%B8%AD%E5%A4%AE%E5%8C%BA%E5%8D%97%E8%88%B9%E5%A0%B41-17-21"
+  },
+  "shinsaibashi-parco": {
+    "lat": 34.674038,
+    "lon": 135.501312,
+    "query": "大阪府大阪市中央区心斎橋筋1-8-3",
+    "matched": "大阪府大阪市中央区心斎橋筋一丁目８番３号",
+    "source": "https://msearch.gsi.go.jp/address-search/AddressSearch?q=%E5%A4%A7%E9%98%AA%E5%BA%9C%E5%A4%A7%E9%98%AA%E5%B8%82%E4%B8%AD%E5%A4%AE%E5%8C%BA%E5%BF%83%E6%96%8E%E6%A9%8B%E7%AD%8B1-8-3"
+  },
+  "dotonbori": {
+    "lat": 34.668774,
+    "lon": 135.500977,
+    "query": "大阪府大阪市中央区道頓堀1-10-4",
+    "matched": "大阪府大阪市中央区道頓堀一丁目１０番４号",
+    "source": "https://msearch.gsi.go.jp/address-search/AddressSearch?q=%E5%A4%A7%E9%98%AA%E5%BA%9C%E5%A4%A7%E9%98%AA%E5%B8%82%E4%B8%AD%E5%A4%AE%E5%8C%BA%E9%81%93%E9%A0%93%E5%A0%801-10-4"
+  },
+  "hanadako": {
+    "lat": 34.703907,
+    "lon": 135.49791,
+    "query": "大阪府大阪市北区角田町9-26",
+    "matched": "大阪府大阪市北区角田町９番２６号",
+    "source": "https://msearch.gsi.go.jp/address-search/AddressSearch?q=%E5%A4%A7%E9%98%AA%E5%BA%9C%E5%A4%A7%E9%98%AA%E5%B8%82%E5%8C%97%E5%8C%BA%E8%A7%92%E7%94%B0%E7%94%BA9-26"
+  },
+  "takoume": {
+    "lat": 34.668831,
+    "lon": 135.505295,
+    "query": "大阪府大阪市中央区道頓堀1-1-8",
+    "matched": "大阪府大阪市中央区道頓堀一丁目１番８号",
+    "source": "https://msearch.gsi.go.jp/address-search/AddressSearch?q=%E5%A4%A7%E9%98%AA%E5%BA%9C%E5%A4%A7%E9%98%AA%E5%B8%82%E4%B8%AD%E5%A4%AE%E5%8C%BA%E9%81%93%E9%A0%93%E5%A0%801-1-8"
+  },
+  "kibitaki": {
+    "lat": 34.671143,
+    "lon": 135.50209,
+    "query": "大阪府大阪市中央区心斎橋筋2-1-10",
+    "matched": "大阪府大阪市中央区心斎橋筋二丁目１番１０号",
+    "source": "https://msearch.gsi.go.jp/address-search/AddressSearch?q=%E5%A4%A7%E9%98%AA%E5%BA%9C%E5%A4%A7%E9%98%AA%E5%B8%82%E4%B8%AD%E5%A4%AE%E5%8C%BA%E5%BF%83%E6%96%8E%E6%A9%8B%E7%AD%8B2-1-10"
   }
 };
 
@@ -512,6 +568,9 @@ window.TRIP_MAP_ROUTES = {
     'hankyu-karasuma': { name: ['阪急烏丸', 'Hankyu Karasuma'], lon: 135.7597, lat: 35.0035 },
     'hankyu-umeda': { name: ['阪急大阪梅田', 'Hankyu Osaka-Umeda'], lon: 135.4983721, lat: 34.7054194 },
     osaka: { name: ['大阪', 'Osaka'], lon: 135.4961773, lat: 34.7025087 },
+    'umeda-midosuji': { name: ['梅田', 'Umeda'], lon: 135.4975879, lat: 34.7034131 },
+    shinsaibashi: { name: ['心齋橋', 'Shinsaibashi'], lon: 135.5003566, lat: 34.6745173 },
+    namba: { name: ['なんば', 'Namba'], lon: 135.500271, lat: 34.6661565 },
     'jingumae-2-bus': { name: ['神宮前二丁目', 'Jingumae 2-chome'], lon: 139.71101, lat: 35.67476 },
     'yoyogi-bus': { name: ['代々木駅', 'Yoyogi Station'], lon: 139.70199, lat: 35.68226 }
   },
@@ -535,7 +594,8 @@ window.TRIP_MAP_ROUTES = {
     K: { name: ['烏丸線', 'Karasuma Line'], color: '#3ca13d' },
     HA: { name: ['HARUKA', 'HARUKA'], color: '#0f9bd7', square: true },
     HK: { name: ['阪急京都線', 'Hankyu Kyoto Line'], color: '#8a1c2b' },
-    JK: { name: ['JR 京都線 新快速', 'JR Kyoto Line Special Rapid'], color: '#0072bc', square: true }
+    JK: { name: ['JR 京都線 新快速', 'JR Kyoto Line Special Rapid'], color: '#0072bc', square: true },
+    MS: { name: ['御堂筋線', 'Midosuji Line'], color: '#e5171f' }
   },
   areas: [
     { id: 'gaien', city: 'tokyo', name: ['外苑', 'Gaien'], places: ['ginkgo', 'hm-cafe'] },
@@ -659,8 +719,7 @@ window.TRIP_MAP_ROUTES = {
         { to: 'kiyomizu', s: [{ w: 'est' }], note: ['穿和服走二年坂、三年坂上去', 'Walk up Ninenzaka and Sannenzaka in kimono'] },
         { to: 'tofukuji', s: [{ taxi: '10–15' }] },
         { to: 'fushimi-inari', s: [{ w: 0 }, { l: 'D', a: 'tofukuji-station', b: 'inari', n: 1 }] },
-        { to: 'irori-beniya', s: [{ l: 'D', a: 'inari', b: 'uji', m: 20 }, { w: 3 }], note: ['想吃午餐才來；先到中村藤吉本店抽整理券', 'Only if we want lunch; get a ticket at the Nakamura Tokichi main shop first'] },
-        { to: 'byodoin', s: [{ w: 10 }], note: ['沿宇治橋通、平等院表參道走', 'Along Ujibashi-dori and the Byodoin Omotesando'] },
+        { to: 'byodoin', s: [{ l: 'D', a: 'inari', b: 'uji', m: 20 }, { w: 1, to: 'tokichi-uji' }, { w: 10 }], note: ['先到中村藤吉本店抽號碼牌、買餅乾，再沿宇治橋通、平等院表參道走', 'Ticket and cookies at the Nakamura Tokichi main shop first, then along Ujibashi-dori and the Byodoin Omotesando'] },
         { to: 'tokichi-uji', s: [{ w: 10 }], note: ['叫號後回來', 'Come back when called'] },
         { to: 'tempura-yoshikawa', s: [{ w: 1 }, { l: 'D', a: 'uji', b: 'kyoto', m: 17 }, { taxi: '15–20', to: 'kimono' }, { w: 30, to: 'shirakawa' }, { taxi: 10 }], note: ['16:00 離開宇治，17:30 前在清水寺店還和服，再經二年坂、八坂神社、花見小路走到白川；19:00 左右搭計程車去吉川，19:30 已訂', 'Leave Uji at 16:00, return the kimono at the Kiyomizu shop by 17:30, then walk via Ninenzaka, Yasaka Shrine and Hanamikoji to Shirakawa; taxi to Yoshikawa around 19:00 for the 19:30 booking'], alt: ['或從白川走路約 20 分（過三條大橋）', 'Or walk from Shirakawa, about 20 min (over Sanjo Bridge)'] },
         { to: 'hyatt', s: [{ taxi: 15 }] }
@@ -668,7 +727,7 @@ window.TRIP_MAP_ROUTES = {
     },
     '2026-11-27': {
       tab: ['茶舖・大阪', 'Tea / Osaka'],
-      title: ['To. 早餐後短逛御所南，午餐後去大阪', 'To. breakfast, a short Gosho-minami morning, then Osaka'],
+      title: ['To. 早餐後短逛御所南，下午去大阪逛街，天黑和固力果拍照', 'To. breakfast and Gosho-minami, then Osaka shopping and the Glico sign after dark'],
       legs: [
         { to: 'to-kyoto', s: [{ taxi: '15–20' }], note: ['8:00 モーニング，7:55 到', '8:00 morning; arrive 7:55'] },
         { to: 'flip-up', s: [{ w: 'est' }], note: ['買麵包外帶', 'Takeaway bread'] },
@@ -677,8 +736,13 @@ window.TRIP_MAP_ROUTES = {
         { to: 'yugen', s: [{ w: 'est' }], note: ['11:00 開門', 'Opens 11:00'] },
         { to: 'marukyu-nishinotoin', s: [{ w: 'est' }], note: ['午餐前短坐抹茶', 'Short matcha before lunch'] },
         { to: 'okuniya-mambei', s: [{ w: 'est' }], note: ['12:30 已訂，限 1 小時', '12:30 booked; 1 hour'] },
-        { to: 'umeda', s: [{ w: 3 }, { l: 'HK', a: 'hankyu-karasuma', b: 'hankyu-umeda', m: 43 }], note: ['阪急特急，刷 Suica；不要先回飯店', 'Hankyu limited express, tap Suica; skip the hotel first'] },
-        { to: 'hyatt', s: [{ w: 0 }, { l: 'JK', a: 'osaka', b: 'kyoto', m: 29 }, { taxi: '5–10' }], note: ['JR 新快速到京都站，計程車回 Hyatt', 'JR Special Rapid to Kyoto Station, then taxi to Hyatt'] }
+        { to: 'umekita', s: [{ w: 3 }, { l: 'HK', a: 'hankyu-karasuma', b: 'hankyu-umeda', m: 43 }, { w: 10 }], note: ['阪急特急，刷 Suica；不要先回飯店。出站穿過 JR 大阪站往北走', 'Hankyu limited express, tap Suica; skip the hotel first. Then walk north through JR Osaka Station'] },
+        { to: 'gorichan', s: [{ w: 10 }, { l: 'MS', a: 'umeda-midosuji', b: 'shinsaibashi', m: 7, n: 3 }, { w: 3 }] },
+        { to: 'canele-japon', s: [{ w: 6 }] },
+        { to: 'shinsaibashi-parco', s: [{ w: 7 }] },
+        { to: 'dotonbori', s: [{ w: 10 }], note: ['沿心齋橋筋商店街往南走到底就是戎橋', 'South along the Shinsaibashi-suji arcade to its end at Ebisubashi'] },
+        { to: 'hanadako', s: [{ w: 4 }, { l: 'MS', a: 'namba', b: 'umeda-midosuji', m: 8, n: 4 }, { w: 3 }], note: ['晚餐還沒訂：選たこ梅就先往東走 5 分鐘，吃完再走回なんば站；選梅田的店就吃完直接走到食道街', 'Dinner is not booked yet: for Takoume, walk 5 minutes east first and back to Namba Station after; for Umeda, walk straight to the Shokudogai after dinner'] },
+        { to: 'hyatt', s: [{ w: 5 }, { l: 'JK', a: 'osaka', b: 'kyoto', m: 29 }, { taxi: '5–10' }], note: ['走到 JR 大阪站搭新快速，京都站搭計程車回 Hyatt', 'Walk to JR Osaka for the Special Rapid, then a taxi from Kyoto Station to Hyatt'] }
       ]
     },
     '2026-11-28': {
