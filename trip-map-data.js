@@ -451,11 +451,11 @@ window.TRIP_MAP_POINTS = {
     "source": "https://msearch.gsi.go.jp/address-search/AddressSearch?q=%E4%BA%AC%E9%83%BD%E5%BA%9C%E4%BA%AC%E9%83%BD%E5%B8%82%E4%B8%AD%E4%BA%AC%E5%8C%BA%E4%B8%89%E5%9D%8A%E8%A5%BF%E6%B4%9E%E9%99%A2%E7%94%BA561"
   },
   "umeda": {
-    "lat": 34.7032689,
-    "lon": 135.4962444,
-    "query": "ルクア大阪 大阪駅",
-    "matched": "ルクア大阪",
-    "source": "https://www.openstreetmap.org/way/1313244351"
+    "lat": 34.702797,
+    "lon": 135.499786,
+    "query": "大阪府大阪市北区角田町7-10",
+    "matched": "大阪府大阪市北区角田町７番１０号",
+    "source": "https://msearch.gsi.go.jp/address-search/AddressSearch?q=%E5%A4%A7%E9%98%AA%E5%BA%9C%E5%A4%A7%E9%98%AA%E5%B8%82%E5%8C%97%E5%8C%BA%E8%A7%92%E7%94%B0%E7%94%BA7-10"
   },
   "umekita": {
     "lat": 34.703248,
@@ -499,19 +499,12 @@ window.TRIP_MAP_POINTS = {
     "matched": "大阪府大阪市北区角田町９番２６号",
     "source": "https://msearch.gsi.go.jp/address-search/AddressSearch?q=%E5%A4%A7%E9%98%AA%E5%BA%9C%E5%A4%A7%E9%98%AA%E5%B8%82%E5%8C%97%E5%8C%BA%E8%A7%92%E7%94%B0%E7%94%BA9-26"
   },
-  "takoume": {
-    "lat": 34.668831,
-    "lon": 135.505295,
-    "query": "大阪府大阪市中央区道頓堀1-1-8",
-    "matched": "大阪府大阪市中央区道頓堀一丁目１番８号",
-    "source": "https://msearch.gsi.go.jp/address-search/AddressSearch?q=%E5%A4%A7%E9%98%AA%E5%BA%9C%E5%A4%A7%E9%98%AA%E5%B8%82%E4%B8%AD%E5%A4%AE%E5%8C%BA%E9%81%93%E9%A0%93%E5%A0%801-1-8"
-  },
-  "kibitaki": {
-    "lat": 34.671143,
-    "lon": 135.50209,
-    "query": "大阪府大阪市中央区心斎橋筋2-1-10",
-    "matched": "大阪府大阪市中央区心斎橋筋二丁目１番１０号",
-    "source": "https://msearch.gsi.go.jp/address-search/AddressSearch?q=%E5%A4%A7%E9%98%AA%E5%BA%9C%E5%A4%A7%E9%98%AA%E5%B8%82%E4%B8%AD%E5%A4%AE%E5%8C%BA%E5%BF%83%E6%96%8E%E6%A9%8B%E7%AD%8B2-1-10"
+  "newbabe": {
+    "lat": 34.667309,
+    "lon": 135.503616,
+    "query": "大阪府大阪市中央区千日前1-9-10",
+    "matched": "大阪府大阪市中央区千日前一丁目９番１０号",
+    "source": "https://msearch.gsi.go.jp/address-search/AddressSearch?q=%E5%A4%A7%E9%98%AA%E5%BA%9C%E5%A4%A7%E9%98%AA%E5%B8%82%E4%B8%AD%E5%A4%AE%E5%8C%BA%E5%8D%83%E6%97%A5%E5%89%8D1-9-10"
   }
 };
 
@@ -741,7 +734,8 @@ window.TRIP_MAP_ROUTES = {
         { to: 'canele-japon', s: [{ w: 6 }] },
         { to: 'shinsaibashi-parco', s: [{ w: 7 }] },
         { to: 'dotonbori', s: [{ w: 10 }], note: ['沿心齋橋筋商店街往南走到底就是戎橋', 'South along the Shinsaibashi-suji arcade to its end at Ebisubashi'] },
-        { to: 'hanadako', s: [{ w: 4 }, { l: 'MS', a: 'namba', b: 'umeda-midosuji', m: 8, n: 4 }, { w: 3 }], note: ['晚餐還沒訂：選たこ梅就先往東走 5 分鐘，吃完再走回なんば站；選梅田的店就吃完直接走到食道街', 'Dinner is not booked yet: for Takoume, walk 5 minutes east first and back to Namba Station after; for Umeda, walk straight to the Shokudogai after dinner'] },
+        { to: 'newbabe', s: [{ w: 6 }], note: ['從戎橋沿道頓堀往東走', 'East along Dotonbori from Ebisubashi'] },
+        { to: 'hanadako', s: [{ w: 8 }, { l: 'MS', a: 'namba', b: 'umeda-midosuji', m: 8, n: 4 }, { w: 3 }], note: ['走なんばウォーク地下街到なんば站，御堂筋線北行回梅田，往阪急方向出站', 'Through the Namba Walk underground mall to Namba Station, Midosuji Line north to Umeda, then exit towards Hankyu'] },
         { to: 'hyatt', s: [{ w: 5 }, { l: 'JK', a: 'osaka', b: 'kyoto', m: 29 }, { taxi: '5–10' }], note: ['走到 JR 大阪站搭新快速，京都站搭計程車回 Hyatt', 'Walk to JR Osaka for the Special Rapid, then a taxi from Kyoto Station to Hyatt'] }
       ]
     },
