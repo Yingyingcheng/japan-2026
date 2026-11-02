@@ -505,6 +505,20 @@ window.TRIP_MAP_POINTS = {
     "query": "大阪府大阪市中央区千日前1-9-10",
     "matched": "大阪府大阪市中央区千日前一丁目９番１０号",
     "source": "https://msearch.gsi.go.jp/address-search/AddressSearch?q=%E5%A4%A7%E9%98%AA%E5%BA%9C%E5%A4%A7%E9%98%AA%E5%B8%82%E4%B8%AD%E5%A4%AE%E5%8C%BA%E5%8D%83%E6%97%A5%E5%89%8D1-9-10"
+  },
+  "mel-coffee": {
+    "lat": 34.676815,
+    "lon": 135.49588,
+    "query": "大阪府大阪市西区新町1-20-4",
+    "matched": "大阪府大阪市西区新町一丁目２０番４号",
+    "source": "https://msearch.gsi.go.jp/address-search/AddressSearch?q=%E5%A4%A7%E9%98%AA%E5%BA%9C%E5%A4%A7%E9%98%AA%E5%B8%82%E8%A5%BF%E5%8C%BA%E6%96%B0%E7%94%BA1-20-4"
+  },
+  "lilo-coffee": {
+    "lat": 34.674141,
+    "lon": 135.497971,
+    "query": "大阪府大阪市中央区西心斎橋1-10-28",
+    "matched": "大阪府大阪市中央区西心斎橋一丁目１０番２８号",
+    "source": "https://msearch.gsi.go.jp/address-search/AddressSearch?q=%E5%A4%A7%E9%98%AA%E5%BA%9C%E5%A4%A7%E9%98%AA%E5%B8%82%E4%B8%AD%E5%A4%AE%E5%8C%BA%E8%A5%BF%E5%BF%83%E6%96%8E%E6%A9%8B1-10-28"
   }
 };
 
@@ -730,10 +744,12 @@ window.TRIP_MAP_ROUTES = {
         { to: 'marukyu-nishinotoin', s: [{ w: 'est' }], note: ['午餐前短坐抹茶', 'Short matcha before lunch'] },
         { to: 'okuniya-mambei', s: [{ w: 'est' }], note: ['12:30 已訂，限 1 小時', '12:30 booked; 1 hour'] },
         { to: 'umekita', s: [{ w: 3 }, { l: 'HK', a: 'hankyu-karasuma', b: 'hankyu-umeda', m: 43 }, { w: 10 }], note: ['阪急特急，刷 Suica；不要先回飯店。出站穿過 JR 大阪站往北走', 'Hankyu limited express, tap Suica; skip the hotel first. Then walk north through JR Osaka Station'] },
-        { to: 'gorichan', s: [{ w: 10 }, { l: 'MS', a: 'umeda-midosuji', b: 'shinsaibashi', m: 7, n: 3 }, { w: 3 }] },
+        { to: 'mel-coffee', s: [{ w: 10 }, { l: 'MS', a: 'umeda-midosuji', b: 'shinsaibashi', m: 7, n: 3 }, { w: 7 }], note: ['心齋橋站 3 號出口往西，過四ツ橋筋', 'Shinsaibashi exit 3, then west past Yotsubashi-suji'] },
+        { to: 'gorichan', s: [{ w: 9 }], note: ['往東走，過御堂筋', 'East, across Midosuji'] },
         { to: 'canele-japon', s: [{ w: 6 }] },
         { to: 'shinsaibashi-parco', s: [{ w: 7 }] },
-        { to: 'dotonbori', s: [{ w: 10 }], note: ['沿心齋橋筋商店街往南走到底就是戎橋', 'South along the Shinsaibashi-suji arcade to its end at Ebisubashi'] },
+        { to: 'lilo-coffee', s: [{ w: 5 }], note: ['往西過御堂筋到美國村', 'West across Midosuji into Amerikamura'] },
+        { to: 'dotonbori', s: [{ w: 12 }], note: ['往東走回心齋橋筋，沿商店街往南走到底就是戎橋', 'East back to Shinsaibashi-suji, then south along the arcade to Ebisubashi'] },
         { to: 'newbabe', s: [{ w: 6 }], note: ['從戎橋沿道頓堀往東走', 'East along Dotonbori from Ebisubashi'] },
         { to: 'hanadako', s: [{ w: 8 }, { l: 'MS', a: 'namba', b: 'umeda-midosuji', m: 8, n: 4 }, { w: 3 }], note: ['走なんばウォーク地下街到なんば站，御堂筋線北行回梅田，往阪急方向出站', 'Through the Namba Walk underground mall to Namba Station, Midosuji Line north to Umeda, then exit towards Hankyu'] },
         { to: 'hyatt', s: [{ w: 5 }, { l: 'JK', a: 'osaka', b: 'kyoto', m: 29 }, { taxi: '5–10' }], note: ['走到 JR 大阪站搭新快速，京都站搭計程車回 Hyatt', 'Walk to JR Osaka for the Special Rapid, then a taxi from Kyoto Station to Hyatt'] }
